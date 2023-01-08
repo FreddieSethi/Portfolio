@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignContent: "flex-end",
     width: "100%",
-    backgroundColor: "dodgerblue",
+    backgroundColor: colours.lightBlue,
     marginTop: 5,
     marginBottom: 5,
   },

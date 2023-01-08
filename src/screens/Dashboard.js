@@ -83,6 +83,24 @@ const Dashboard = () => {
           </View>
         </View>
 
+        <View style={{ marginTop: 40 }}>
+          <Text style={styles.text}>Calories: </Text>
+          <Text style={styles.text}>Protein: </Text>
+          <Text style={styles.text}>Carbohydrates: </Text>
+          <Text style={styles.text}>Fat: </Text>
+        </View>
+
+        <TouchableOpacity
+          onPress={() => {
+            changePassword();
+          }}
+          style={styles.button}
+        >
+          <Text style={{ fontSize: 22, fontWeight: "bold" }}>
+            Edit Calories
+          </Text>
+        </TouchableOpacity>
+
         <TouchableOpacity
           onPress={() => {
             changePassword();
@@ -112,7 +130,7 @@ export default Dashboard;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
+    //alignItems: "center",
     marginTop: 50,
   },
   textInput: {
@@ -132,5 +150,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 50,
+  },
+  text: {
+    fontSize: 22,
+    fontWeight: "bold",
   },
 });

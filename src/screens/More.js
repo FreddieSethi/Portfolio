@@ -27,7 +27,7 @@ const Dashboard = () => {
             />
           </TouchableOpacity>
         </View>
-        <View style={{ flexDirection: "row" }}>
+        <View style={{ flexDirection: "row", alignContent: "flex-end" }}>
           <View style={{ flexDirection: "row", flex: 1 }}>
             <TouchableOpacity
               onPress={() => navigation.navigate("BMI")}

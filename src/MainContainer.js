@@ -36,6 +36,7 @@ import DetailsScreen from "./components/DetailsScreen";
 
 import themeContext from "./config/themeContext";
 import theme from "./config/theme";
+import { MenuProvider } from "react-native-popup-menu";
 
 const Stack = createStackNavigator();
 
@@ -110,7 +111,8 @@ function App() {
         name="Home"
         component={HomeScreen}
         options={{
-          headerTitleAlign: "center",
+          headerTitle: () => <Header name="Home " />,
+          headerStyle: styles.headerStyle,
         }}
       />
       <Stack.Screen
@@ -125,32 +127,32 @@ function App() {
         name="Timer"
         component={TimerScreen}
         options={{
-          headerTitleAlign: "center",
-          title: "Timer",
+          headerTitle: () => <Header name="Time " />,
+          headerStyle: styles.headerStyle,
         }}
       />
       <Stack.Screen
         name="StopWatch"
         component={StopWatch}
         options={{
-          headerTitleAlign: "center",
-          title: "Timer",
+          headerTitle: () => <Header name="Timer " />,
+          headerStyle: styles.headerStyle,
         }}
       />
       <Stack.Screen
         name="CreateTemplate"
         component={CreateTemplateScreen}
         options={{
-          headerTitleAlign: "center",
-          title: "🔨 Create Template 🔨",
+          headerTitle: () => <Header name="Create Template " />,
+          headerStyle: styles.headerStyle,
         }}
       />
       <Stack.Screen
         name="HistoryScreen"
         component={HistoryScreen}
         options={{
-          headerTitleAlign: "center",
-          title: "History",
+          headerTitle: () => <Header name="History" />,
+          headerStyle: styles.headerStyle,
         }}
       />
 
@@ -214,6 +216,7 @@ function App() {
         name="Newsfeed"
         component={Newsfeed}
         options={{
+          headerTitle: () => <Header name="Meal Planner" />,
           headerStyle: styles.headerStyle,
         }}
       />
@@ -223,7 +226,8 @@ function App() {
         name="Details View"
         component={DetailsScreen}
         options={({ route }) => ({
-          title: route.params.name,
+          headerTitle: () => <Header name={route.params.name} />,
+          headerStyle: styles.headerStyle,
         })}
       />
 
@@ -261,11 +265,17 @@ export default () => {
   }, [darkMode]);
 
   return (
-    <themeContext.Provider value={darkMode === true ? theme.dark : theme.light}>
-      <NavigationContainer theme={darkMode === true ? DarkTheme : DefaultTheme}>
-        <App />
-      </NavigationContainer>
-    </themeContext.Provider>
+    <MenuProvider>
+      <themeContext.Provider
+        value={darkMode === true ? theme.dark : theme.light}
+      >
+        <NavigationContainer
+          theme={darkMode === true ? DarkTheme : DefaultTheme}
+        >
+          <App />
+        </NavigationContainer>
+      </themeContext.Provider>
+    </MenuProvider>
   );
 };
 
@@ -290,6 +300,5 @@ const styles = StyleSheet.create({
     backgroundColor: colours.lightBlue,
     shadowColor: "#000",
     elevation: 25,
-    marginLeft: 15,
   },
 });

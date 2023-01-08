@@ -158,7 +158,7 @@ const handlePress = (item) => {
   navigation.navigate("Details", { item });
 };
 
-function AddFoodScreen() {
+const AddFoodScreen = (calories, protein, carbs, fats) => {
   const navigation = useNavigation();
   const [searchTerm, setSearchTerm] = useState("");
   return (
@@ -208,7 +208,7 @@ function AddFoodScreen() {
       </View>
     </SafeAreaView>
   );
-}
+};
 
 export default AddFoodScreen;
 

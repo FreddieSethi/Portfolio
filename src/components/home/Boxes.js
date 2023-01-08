@@ -5,15 +5,6 @@ export default function Boxes({ setWorkouts }) {
   const navigation = useNavigation();
   return (
     <View style={styles.boxesContainer}>
-      <TouchableOpacity style={{ alignItems: "center" }}>
-        <View style={[styles.heroBox, { backgroundColor: "#1B1B1B" }]}>
-          <Image
-            style={styles.icon}
-            source={require("../../../assets/icons/template2.png")}
-          ></Image>
-        </View>
-        <Text style={styles.textStyles}>Template</Text>
-      </TouchableOpacity>
       <TouchableOpacity
         style={{ alignItems: "center" }}
         onPress={() => navigation.navigate("CreateTemplate", { setWorkouts })}
@@ -37,15 +28,6 @@ export default function Boxes({ setWorkouts }) {
           ></Image>
         </View>
         <Text style={styles.textStyles}>History</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={{ alignItems: "center" }}>
-        <View style={styles.heroBox}>
-          <Image
-            style={styles.icon}
-            source={require("../../../assets/icons/weights.png")}
-          ></Image>
-        </View>
-        <Text style={styles.textStyles}>Exercises</Text>
       </TouchableOpacity>
     </View>
   );
