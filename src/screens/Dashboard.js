@@ -66,20 +66,11 @@ const Dashboard = () => {
         </TouchableOpacity>
 
         <TouchableOpacity
-          onPress={() => {
-            B();
-          }}
-          style={styles.button}
-        >
-          <Text style={{ fontSize: 22, fontWeight: "bold" }}>Sign out</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
           onPress={() => navigation.navigate("Add Food")}
           style={{ marginTop: 20 }}
         >
           <Icon name="food" size={60} color={colours.black} />
-          <Text style={{ fontWeight: "bold", fontSize: 16 }}>Add Food</Text>
+          <Text style={{ fontWeight: "bold", fontSize: 16 }}>Food</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => navigation.navigate("More")}
@@ -93,7 +84,7 @@ const Dashboard = () => {
           style={{ marginTop: 20 }}
         >
           <Icon name="morehoriz" size={60} color={colours.black} />
-          <Text style={{ fontWeight: "bold", fontSize: 16 }}>More</Text>
+          <Text style={{ fontWeight: "bold", fontSize: 16 }}>Workout</Text>
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>

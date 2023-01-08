@@ -23,9 +23,8 @@ import GymsNearby from "./screens/GymsNearby";
 import MealPlanner from "./screens/MealPlanner";
 import Newsfeed from "./screens/Newsfeed";
 import DarkMode from "./screens/DarkMode";
-
+import StopWatch from "./components/shared/StopWatch";
 import Authentication from "./screens/Authentication";
-
 import CreateTemplateScreen from "./screens/workoutContainer/CreateTemplateScreen";
 import HistoryScreen from "./screens/workoutContainer/HistoryScreen";
 import HomeScreen from "./screens/workoutContainer/HomeScreen";
