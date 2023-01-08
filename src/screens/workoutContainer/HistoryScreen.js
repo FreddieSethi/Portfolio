@@ -7,7 +7,7 @@ import {
   ActivityIndicator,
 } from "react-native";
 import { NewCalendarList } from "react-native-calendars";
-import { getWorkoutDays } from "../data/firestopreRealTime";
+import { getWorkoutDays } from "../../data/firestopreRealTime";
 
 const initialDate = getTodaysDate();
 

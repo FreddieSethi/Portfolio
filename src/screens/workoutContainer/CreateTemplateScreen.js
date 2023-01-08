@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { TextInput, View, StyleSheet, Text, ScrollView } from "react-native";
 import { Formik } from "formik";
-import Workout from "../components/createTemplateForm/Workout";
-import EndFormButtons from "../components/createTemplateForm/EndFormButtons";
-import { writeFormData } from "../data/firestopreRealTime";
-import { formatFormForFirebaseUpload } from "../formFormatter";
+import Workout from "../../components/createTemplateForm/Workout";
+import EndFormButtons from "../../components/createTemplateForm/EndFormButtons";
+import { writeFormData } from "../../data/firestopreRealTime";
+import { formatFormForFirebaseUpload } from "./formFormatter";
 import { useNavigation } from "@react-navigation/native";
 import { setDataFromDB } from "./HomeScreen";
 

@@ -14,7 +14,7 @@ import {
   getFormData,
   Boxes,
   StyleSheet,
-} from "../components/home/homeBarrel";
+} from "../../components/home/homeBarrel";
 
 const HomeScreen = () => {
   const [workouts, setWorkouts] = useState([]);

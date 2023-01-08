@@ -26,6 +26,12 @@ import DarkMode from "./screens/DarkMode";
 
 import Authentication from "./screens/Authentication";
 
+import CreateTemplateScreen from "./screens/workoutContainer/CreateTemplateScreen";
+import HistoryScreen from "./screens/workoutContainer/HistoryScreen";
+import HomeScreen from "./screens/workoutContainer/HomeScreen";
+import TimerScreen from "./screens/workoutContainer/TimerScreen";
+import WorkoutScreen from "./screens/workoutContainer/WorkoutScreen";
+
 import ItemList from "./components/ItemList";
 import DetailsScreen from "./components/DetailsScreen";
 
@@ -133,6 +139,54 @@ function App() {
             shadowColor: "#000",
             elevation: 25,
           },
+        }}
+      />
+
+      <Stack.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          headerTitleAlign: "center",
+        }}
+      />
+      <Stack.Screen
+        name="WorkoutScreen"
+        component={WorkoutScreen}
+        options={{
+          headerTitleAlign: "center",
+          headerTitle: (props) => <StopWatch />,
+        }}
+      />
+      <Stack.Screen
+        name="Timer"
+        component={TimerScreen}
+        options={{
+          headerTitleAlign: "center",
+          title: "Timer",
+        }}
+      />
+      <Stack.Screen
+        name="StopWatch"
+        component={StopWatch}
+        options={{
+          headerTitleAlign: "center",
+          title: "Timer",
+        }}
+      />
+      <Stack.Screen
+        name="CreateTemplate"
+        component={CreateTemplateScreen}
+        options={{
+          headerTitleAlign: "center",
+          title: "🔨 Create Template 🔨",
+        }}
+      />
+      <Stack.Screen
+        name="HistoryScreen"
+        component={HistoryScreen}
+        options={{
+          headerTitleAlign: "center",
+          title: "History",
         }}
       />
 

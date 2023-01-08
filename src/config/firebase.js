@@ -8,6 +8,7 @@ import "firebase/compat/firestore";
 const firebaseConfig = {
   apiKey: "AIzaSyDAN6dvAFofSLODnboKY7e1EIe2hF7ImBg",
   authDomain: "test-93783.firebaseapp.com",
+  databaseURL: "https://test-93783-default-rtdb.firebaseio.com/",
   projectId: "test-93783",
   storageBucket: "test-93783.appspot.com",
   messagingSenderId: "606361447915",

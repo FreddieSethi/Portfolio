@@ -88,6 +88,13 @@ const Dashboard = () => {
           <Icon name="morehoriz" size={60} color={colours.black} />
           <Text style={{ fontWeight: "bold", fontSize: 16 }}>More</Text>
         </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Home")}
+          style={{ marginTop: 20 }}
+        >
+          <Icon name="morehoriz" size={60} color={colours.black} />
+          <Text style={{ fontWeight: "bold", fontSize: 16 }}>More</Text>
+        </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
   );
