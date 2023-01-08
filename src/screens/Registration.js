@@ -7,7 +7,7 @@ import {
   ScrollView,
 } from "react-native";
 import React, { useState } from "react";
-import { firebase } from "../config";
+import { firebase } from "../config/firebase";
 
 const Registration = () => {
   const [email, setEmail] = useState("");

@@ -5,9 +5,9 @@ import {
   TextInput,
   StyleSheet,
 } from "react-native";
-import { createStackNavigator } from "@react-navigation/stack";
+
 import React, { useState, useEffect } from "react";
-import { firebase } from "../config";
+import { firebase } from "../config/firebase";
 import { useNavigation } from "@react-navigation/native";
 
 const Login = () => {
