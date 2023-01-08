@@ -59,25 +59,6 @@ export default function SetsAddSection({
           highlightBorderWidth={2}
         />
       </View>
-      {/* 
-      <TextInput
-        keyboardType="numeric"
-        style={styles.textInputSmall}
-        placeholder="Weight"
-        onChangeText={handleChange(
-          `weight Workout: ${workoutIndex}, S: ${setIndex}`
-        )}
-        onBlur={handleBlur(`weight Workout: ${workoutIndex} S: ${setIndex}`)}
-      ></TextInput>
-      <TextInput
-        keyboardType="numeric"
-        style={styles.textInputSmall}
-        placeholder="Reps"
-        onChangeText={handleChange(
-          `reps Workout: ${workoutIndex}, S: ${setIndex}`
-        )}
-        onBlur={handleBlur(`reps Workout: ${workoutIndex} S: ${setIndex}`)}
-      ></TextInput> */}
     </View>
   );
 }

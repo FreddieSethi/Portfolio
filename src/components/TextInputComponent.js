@@ -2,6 +2,7 @@ import React from "react";
 import themeContext from "../Theme/themeContext";
 import theme from "../Theme/theme";
 import { StyleSheet } from "react-native";
+import colours from "../config/colours";
 //theme colours, size, faded
 
 export default function TextInputComponent(props) {
@@ -9,7 +10,7 @@ export default function TextInputComponent(props) {
   return (
     <TextInputComponent
       style={[styles.input, { color: theme.color }]}
-      placeholderTextColor={"#FFCCCB"}
+      placeholderTextColor={colours.pink}
       keyboardType="numeric"
     />
   );
@@ -23,6 +24,6 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 5,
     fontSize: 18,
-    borderColor: "#FF0000",
+    borderColor: colours.pink,
   },
 });

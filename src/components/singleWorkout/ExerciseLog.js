@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, Platform } from "react-native";
 import { useState } from "react";
 import { Checkbox } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
+import colours from "../../config/colours";
 
 const Set = ({ index, reps, weight }) => {
   const [checked, setChecked] = useState(false);
@@ -17,7 +18,7 @@ const Set = ({ index, reps, weight }) => {
         style={Platform.OS === "ios" ? styles.checkbox : styles.checkboxAndroid}
       >
         <Checkbox
-          color="#007AFF"
+          color={colours.text}
           status={checked ? "checked" : "unchecked"}
           onPress={() => {
             if (!checked) {
@@ -66,13 +67,13 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     marginHorizontal: 24,
     borderWidth: 1,
-    borderColor: "#ECECEA",
+    borderColor: colours.black,
     borderRadius: 22,
     paddingBottom: 16,
   },
   titleContainer: {
     height: 48,
-    backgroundColor: "#1B1B1B",
+    backgroundColor: colours.black,
     borderTopLeftRadius: 22,
     borderTopRightRadius: 22,
     paddingLeft: 8,
@@ -91,7 +92,7 @@ const styles = StyleSheet.create({
 
     backgroundColor: "rgba(158, 150, 150, .2)",
     borderRadius: 8,
-    shadowColor: "#000",
+    shadowColor: colours.black,
     shadowOffset: {
       width: 0,
       height: 3,
@@ -111,7 +112,7 @@ const styles = StyleSheet.create({
   },
   textFont: {
     fontFamily: "LexendDeca_400Regular",
-    color: "#1B1B1B",
+    color: colours.black,
   },
 });
 

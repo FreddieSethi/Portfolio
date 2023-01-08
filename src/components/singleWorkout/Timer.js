@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import { CountdownCircleTimer } from "react-native-countdown-circle-timer";
 import { Ionicons } from "@expo/vector-icons";
+import colours from "../../config/colours";
 
 const Timer = () => {
   const [seconds, setSeconds] = useState(30);
@@ -78,7 +79,7 @@ const Timer = () => {
           }}
         >
           <View style={styles.iconBackground}>
-            <Text style={{ color: "#007AFF", fontSize: 40 }}> - </Text>
+            <Text style={{ color: colours.text, fontSize: 40 }}> - </Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
@@ -88,7 +89,7 @@ const Timer = () => {
           }}
         >
           <View style={styles.iconBackground}>
-            <Ionicons name="add" size={35} color="#007AFF" />
+            <Ionicons name="add" size={35} color={colours.text} />
           </View>
         </TouchableOpacity>
       </View>

@@ -8,6 +8,7 @@ import {
   Alert,
 } from "react-native";
 import ExerciseLog from "../../components/singleWorkout/ExerciseLog";
+import colours from "../../config/colours";
 
 const WorkoutScreen = ({ route }) => {
   const navigation = useNavigation();
@@ -55,7 +56,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontFamily: "LexendDeca_400Regular",
     fontSize: 24,
-    color: "#1B1B1B",
+    color: colours.black,
   },
   finishButtonContainer: {
     justifyContent: "center",
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
     marginBottom: 40,
   },
   finishButton: {
-    backgroundColor: "#1B1B1B",
+    backgroundColor: colours.black,
     width: 100,
     height: 40,
     borderRadius: 6,

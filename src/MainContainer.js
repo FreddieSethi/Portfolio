@@ -119,15 +119,15 @@ function App() {
         name="WorkoutScreen"
         component={WorkoutScreen}
         options={{
-          headerTitleAlign: "center",
-          headerTitle: (props) => <StopWatch />,
+          headerTitle: () => <Header name={<StopWatch />} />,
+          headerStyle: styles.headerStyle,
         }}
       />
       <Stack.Screen
         name="Timer"
         component={TimerScreen}
         options={{
-          headerTitle: () => <Header name="Time " />,
+          headerTitle: () => <Header name="Rest " />,
           headerStyle: styles.headerStyle,
         }}
       />
@@ -285,20 +285,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 100,
   },
-  headerStyle: {
-    height: 150,
-    borderBottomLeftRadius: 50,
-    borderBottomRightRadius: 50,
-    backgroundColor: "#00e4d0",
-    shadowColor: "#000",
-    elevation: 25,
-  },
+
   headerStyle: {
     height: 150,
     borderBottomLeftRadius: 50,
     borderBottomRightRadius: 50,
     backgroundColor: colours.lightBlue,
-    shadowColor: "#000",
+    shadowColor: colours.black,
     elevation: 25,
   },
 });

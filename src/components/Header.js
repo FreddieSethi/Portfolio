@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet } from "react-native";
 import React from "react";
+import colours from "../config/colours";
 
 const Header = (props) => {
   return (
@@ -16,8 +17,8 @@ const styles = StyleSheet.create({
     height: 150,
     borderBottomLeftRadius: 50,
     borderBottomRightRadius: 50,
-    backgroundColor: "#00e4d0",
-    shadowColor: "#000",
+    backgroundColor: colours.lightBlue,
+    shadowColor: colours.black,
     elevation: 25,
     fontWeight: "bold",
     fontSize: 28,

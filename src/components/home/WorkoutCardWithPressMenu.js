@@ -7,6 +7,7 @@ import {
   renderers,
   MenuTrigger,
 } from "react-native-popup-menu";
+import colours from "../../config/colours";
 import {
   addWorkoutToCalendar,
   deleteDocument,
@@ -38,7 +39,7 @@ const WorkoutCardWithPressMenu = (props) => {
         </MenuTrigger>
         <MenuOptions>
           <MenuOption
-            style={{ padding: 36, backgroundColor: "#1B1B1B" }}
+            style={{ padding: 36, backgroundColor: colours.black }}
             onSelect={() => {
               navigation.navigate("WorkoutScreen", {
                 title,

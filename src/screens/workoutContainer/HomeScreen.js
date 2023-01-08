@@ -15,6 +15,7 @@ import {
   Boxes,
   StyleSheet,
 } from "../../components/home/homeBarrel";
+import colours from "../../config/colours";
 
 const HomeScreen = () => {
   const [workouts, setWorkouts] = useState([]);
@@ -73,12 +74,12 @@ const styles = StyleSheet.create({
     marginLeft: 24,
     marginTop: 32,
     marginBottom: 16,
-    color: "#1B1B1B",
+    color: colours.black,
   },
   subHeroText: {
     fontSize: 16,
     fontFamily: "LexendDeca_400Regular",
-    color: "#1B1B1B",
+    color: colours.black,
     marginLeft: 24,
     marginBottom: 16,
   },

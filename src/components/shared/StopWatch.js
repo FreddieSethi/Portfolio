@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { StyleSheet, View } from "react-native";
 import { Stopwatch } from "react-native-stopwatch-timer";
+import colours from "../../config/colours";
 
 const StopWatch = () => {
   const [isStopwatchStart, setIsStopwatchStart] = useState(true);
@@ -79,7 +80,7 @@ const options = {
   },
   text: {
     fontSize: 25,
-    color: "#007AFF",
+    color: colours.text,
     marginLeft: 7,
   },
 };

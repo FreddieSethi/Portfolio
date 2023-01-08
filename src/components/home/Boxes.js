@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import colours from "../../config/colours";
 
 export default function Boxes({ setWorkouts }) {
   const navigation = useNavigation();
@@ -44,7 +45,7 @@ const styles = StyleSheet.create({
     width: 65,
     height: 65,
     borderRadius: 15,
-    borderColor: "#ECECEA",
+    borderColor: colours.black,
     borderWidth: 1,
     marginBottom: 8,
 

@@ -1,6 +1,7 @@
 import { TextInput, View, StyleSheet, Text, Pressable } from "react-native";
 import { useState } from "react";
 import SetsAddSection from "./SetsAddSection";
+import colours from "../../config/colours";
 
 const Workout = ({
   index: workoutIndex,
@@ -88,7 +89,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     marginHorizontal: 24,
     borderWidth: 1,
-    borderColor: "#ECECEA",
+    borderColor: colours.black,
     borderRadius: 22,
     paddingBottom: 16,
   },
@@ -99,7 +100,7 @@ const styles = StyleSheet.create({
   },
   titleContainer: {
     height: 48,
-    backgroundColor: "#1B1B1B",
+    backgroundColor: colours.black,
     borderTopLeftRadius: 22,
     borderTopRightRadius: 22,
     paddingLeft: 8,

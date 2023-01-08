@@ -1,5 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import { View, StyleSheet, Text, TouchableWithoutFeedback } from "react-native";
+import { color } from "react-native-elements/dist/helpers";
+import colours from "../../config/colours";
 
 const WorkoutCard = ({ workout }) => {
   const navigation = useNavigation();
@@ -46,13 +48,13 @@ const styles = StyleSheet.create({
     marginTop: 16,
     marginHorizontal: 24,
     borderWidth: 1,
-    borderColor: "#ECECEA",
+    borderColor: colours.black,
     borderRadius: 22,
     paddingBottom: 16,
   },
   titleContainer: {
     height: 48,
-    backgroundColor: "#1B1B1B",
+    backgroundColor: colours.black,
     borderTopLeftRadius: 22,
     borderTopRightRadius: 22,
     paddingHorizontal: 16,

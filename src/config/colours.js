@@ -3,7 +3,7 @@ export default {
   primary: "#fc5c65",
   background: "#00772d",
   black: "#000",
-  text: "#000",
+  text: "#007AFF",
   pink: "#fae1e1",
   green: "#a8600",
   marker: "#fff",
@@ -24,4 +24,5 @@ export default {
   transparent: "rgba(0, 0, 0, 0)",
   white: "#ffffff",
   neongreen: "#00e4d0",
+  red: "#A30000",
 };

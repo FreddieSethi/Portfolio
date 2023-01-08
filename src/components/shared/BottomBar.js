@@ -7,6 +7,7 @@ import {
   writeFormData,
 } from "../../data/firestopreRealTime";
 import { data, fillTemplate } from "../../formFormatter";
+import colours from "../../config/colours";
 
 const BottomBar = () => {
   const navigation = useNavigation();
@@ -60,7 +61,7 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
     height: 55,
-    backgroundColor: "#1B1B1B",
+    backgroundColor: colours.black,
   },
   barIcons: {
     alignItems: "center",
