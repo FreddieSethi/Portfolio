@@ -23,4 +23,5 @@ export default {
   tan: "#fcf8f2",
   transparent: "rgba(0, 0, 0, 0)",
   white: "#ffffff",
+  neongreen: "#00e4d0",
 };

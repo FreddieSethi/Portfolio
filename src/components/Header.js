@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 
 const Header = (props) => {
@@ -10,3 +10,16 @@ const Header = (props) => {
 };
 
 export default Header;
+
+const styles = StyleSheet.create({
+  headerStyle: {
+    height: 150,
+    borderBottomLeftRadius: 50,
+    borderBottomRightRadius: 50,
+    backgroundColor: "#00e4d0",
+    shadowColor: "#000",
+    elevation: 25,
+    fontWeight: "bold",
+    fontSize: 28,
+  },
+});

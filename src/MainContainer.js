@@ -6,9 +6,9 @@ import {
 import { createStackNavigator } from "@react-navigation/stack";
 import React, { useState, useEffect } from "react";
 import { firebase } from "./config/firebase";
-
+import { StyleSheet } from "react-native";
 import { EventRegister } from "react-native-event-listeners";
-
+import colours from "./config/colours";
 import Login from "./screens/Login";
 import Registration from "./screens/Registration";
 import Dashboard from "./screens/Dashboard";
@@ -64,14 +64,7 @@ function App() {
           component={Login}
           options={{
             headerTitle: () => <Header name="Fitness Buddy" />,
-            headerStyle: {
-              height: 150,
-              borderBottomLeftRadius: 50,
-              borderBottomRightRadius: 50,
-              backgroundColor: "#00e4d0",
-              shadowColor: "#000",
-              elevation: 25,
-            },
+            headerStyle: styles.headerStyle,
           }}
         />
         <Stack.Screen
@@ -79,14 +72,7 @@ function App() {
           component={Registration}
           options={{
             headerTitle: () => <Header name="Fitness Buddy" />,
-            headerStyle: {
-              height: 150,
-              borderBottomLeftRadius: 50,
-              borderBottomRightRadius: 50,
-              backgroundColor: "#00e4d0",
-              shadowColor: "#000",
-              elevation: 25,
-            },
+            headerStyle: styles.headerStyle,
           }}
         />
       </Stack.Navigator>
@@ -99,14 +85,7 @@ function App() {
         component={Dashboard}
         options={{
           headerTitle: () => <Header name="Dashboard" />,
-          headerStyle: {
-            height: 150,
-            borderBottomLeftRadius: 50,
-            borderBottomRightRadius: 50,
-            backgroundColor: "#00e4d0",
-            shadowColor: "#000",
-            elevation: 25,
-          },
+          headerStyle: styles.headerStyle,
         }}
       />
 
@@ -115,14 +94,7 @@ function App() {
         component={AddFood}
         options={{
           headerTitle: () => <Header name="Add Food" />,
-          headerStyle: {
-            height: 150,
-            borderBottomLeftRadius: 50,
-            borderBottomRightRadius: 50,
-            backgroundColor: "#00e4d0",
-            shadowColor: "#000",
-            elevation: 25,
-          },
+          headerStyle: styles.headerStyle,
         }}
       />
       <Stack.Screen
@@ -130,14 +102,7 @@ function App() {
         component={Camera}
         options={{
           headerTitle: () => <Header name="Camera" />,
-          headerStyle: {
-            height: 150,
-            borderBottomLeftRadius: 50,
-            borderBottomRightRadius: 50,
-            backgroundColor: "#00e4d0",
-            shadowColor: "#000",
-            elevation: 25,
-          },
+          headerStyle: styles.headerStyle,
         }}
       />
 
@@ -194,14 +159,7 @@ function App() {
         component={More}
         options={{
           headerTitle: () => <Header name="More" />,
-          headerStyle: {
-            height: 150,
-            borderBottomLeftRadius: 50,
-            borderBottomRightRadius: 50,
-            backgroundColor: "#00e4d0",
-            shadowColor: "#000",
-            elevation: 25,
-          },
+          headerStyle: styles.headerStyle,
         }}
       />
       <Stack.Screen
@@ -209,14 +167,7 @@ function App() {
         component={Registration}
         options={{
           headerTitle: () => <Header name="Edit Profile" />,
-          headerStyle: {
-            height: 150,
-            borderBottomLeftRadius: 50,
-            borderBottomRightRadius: 50,
-            backgroundColor: "#00e4d0",
-            shadowColor: "#000",
-            elevation: 25,
-          },
+          headerStyle: styles.headerStyle,
         }}
       />
       <Stack.Screen
@@ -224,14 +175,7 @@ function App() {
         component={BMI}
         options={{
           headerTitle: () => <Header name="BMI" />,
-          headerStyle: {
-            height: 150,
-            borderBottomLeftRadius: 50,
-            borderBottomRightRadius: 50,
-            backgroundColor: "#00e4d0",
-            shadowColor: "#000",
-            elevation: 25,
-          },
+          headerStyle: styles.headerStyle,
         }}
       />
       <Stack.Screen
@@ -239,14 +183,7 @@ function App() {
         component={Pace}
         options={{
           headerTitle: () => <Header name="Pace" />,
-          headerStyle: {
-            height: 150,
-            borderBottomLeftRadius: 50,
-            borderBottomRightRadius: 50,
-            backgroundColor: "#00e4d0",
-            shadowColor: "#000",
-            elevation: 25,
-          },
+          headerStyle: styles.headerStyle,
         }}
       />
       <Stack.Screen
@@ -254,14 +191,7 @@ function App() {
         component={WaistToHip}
         options={{
           headerTitle: () => <Header name="Waist to Hip Calculator" />,
-          headerStyle: {
-            height: 150,
-            borderBottomLeftRadius: 50,
-            borderBottomRightRadius: 50,
-            backgroundColor: "#00e4d0",
-            shadowColor: "#000",
-            elevation: 25,
-          },
+          headerStyle: styles.headerStyle,
         }}
       />
       <Stack.Screen
@@ -269,14 +199,7 @@ function App() {
         component={GymsNearby}
         options={{
           headerTitle: () => <Header name="Gyms Nearby" />,
-          headerStyle: {
-            height: 150,
-            borderBottomLeftRadius: 50,
-            borderBottomRightRadius: 50,
-            backgroundColor: "#00e4d0",
-            shadowColor: "#000",
-            elevation: 25,
-          },
+          headerStyle: styles.headerStyle,
         }}
       />
       <Stack.Screen
@@ -284,29 +207,14 @@ function App() {
         component={MealPlanner}
         options={{
           headerTitle: () => <Header name="Meal Planner" />,
-          headerStyle: {
-            height: 150,
-            borderBottomLeftRadius: 50,
-            borderBottomRightRadius: 50,
-            backgroundColor: "#00e4d0",
-            shadowColor: "#000",
-            elevation: 25,
-          },
+          headerStyle: styles.headerStyle,
         }}
       />
       <Stack.Screen
         name="Newsfeed"
         component={Newsfeed}
         options={{
-          headerTitle: () => <Header name="Newsfeed" />,
-          headerStyle: {
-            height: 150,
-            borderBottomLeftRadius: 50,
-            borderBottomRightRadius: 50,
-            backgroundColor: "#00e4d0",
-            shadowColor: "#000",
-            elevation: 25,
-          },
+          headerStyle: styles.headerStyle,
         }}
       />
 
@@ -324,14 +232,7 @@ function App() {
         component={DarkMode}
         options={{
           headerTitle: () => <Header name="Dark Mode" />,
-          headerStyle: {
-            height: 150,
-            borderBottomLeftRadius: 50,
-            borderBottomRightRadius: 50,
-            backgroundColor: "#00e4d0",
-            shadowColor: "#000",
-            elevation: 25,
-          },
+          headerStyle: styles.headerStyle,
         }}
       />
       <Stack.Screen
@@ -339,14 +240,7 @@ function App() {
         component={Authentication}
         options={{
           headerTitle: () => <Header name="Authentication" />,
-          headerStyle: {
-            height: 150,
-            borderBottomLeftRadius: 50,
-            borderBottomRightRadius: 50,
-            backgroundColor: "#00e4d0",
-            shadowColor: "#000",
-            elevation: 25,
-          },
+          headerStyle: styles.headerStyle,
         }}
       />
     </Stack.Navigator>
@@ -374,3 +268,28 @@ export default () => {
     </themeContext.Provider>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    marginTop: 100,
+  },
+  headerStyle: {
+    height: 150,
+    borderBottomLeftRadius: 50,
+    borderBottomRightRadius: 50,
+    backgroundColor: "#00e4d0",
+    shadowColor: "#000",
+    elevation: 25,
+  },
+  headerStyle: {
+    height: 150,
+    borderBottomLeftRadius: 50,
+    borderBottomRightRadius: 50,
+    backgroundColor: colours.lightBlue,
+    shadowColor: "#000",
+    elevation: 25,
+    marginLeft: 15,
+  },
+});

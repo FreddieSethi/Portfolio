@@ -1,10 +1,17 @@
-import { Text, TouchableOpacity, StyleSheet, SafeAreaView } from "react-native";
+import {
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  SafeAreaView,
+  View,
+} from "react-native";
 import React, { useState, useEffect } from "react";
 import { firebase } from "../config/firebase";
 import { useNavigation } from "@react-navigation/native";
-import Icon from "react-native-vector-icons/MaterialIcons";
+//import Icon from "react-native-vector-icons/MaterialIcons";
 import colours from "../config/colours";
 import { ScrollView } from "react-native-gesture-handler";
+import Icon from "react-native-vector-icons/Ionicons";
 
 const Dashboard = () => {
   const navigation = useNavigation();
@@ -45,6 +52,37 @@ const Dashboard = () => {
           Hello, {name.firstName}
         </Text>
 
+        <View style={{ flexDirection: "row" }}>
+          <View style={{ flexDirection: "row", flex: 1 }}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Add Food")}
+              style={{ marginTop: 20 }}
+            >
+              <Icon name="fast-food-outline" size={60} color={colours.black} />
+              <Text style={{ fontWeight: "bold", fontSize: 16 }}>Food</Text>
+            </TouchableOpacity>
+          </View>
+
+          <View style={{ flexDirection: "row", flex: 2 }}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Home")}
+              style={{ marginTop: 20 }}
+            >
+              <Icon name="fitness-outline" size={60} color={colours.black} />
+              <Text style={{ fontWeight: "bold", fontSize: 16 }}>Workout</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={{ flexDirection: "row-reverse", flex: 3 }}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("More")}
+              style={{ marginTop: 20 }}
+            >
+              <Icon name="ellipsis-horizontal-outline" size={60} />
+              <Text style={{ fontWeight: "bold", fontSize: 16 }}>More</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+
         <TouchableOpacity
           onPress={() => {
             changePassword();
@@ -64,28 +102,6 @@ const Dashboard = () => {
         >
           <Text style={{ fontSize: 22, fontWeight: "bold" }}>Sign out</Text>
         </TouchableOpacity>
-
-        <TouchableOpacity
-          onPress={() => navigation.navigate("Add Food")}
-          style={{ marginTop: 20 }}
-        >
-          <Icon name="food" size={60} color={colours.black} />
-          <Text style={{ fontWeight: "bold", fontSize: 16 }}>Food</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => navigation.navigate("More")}
-          style={{ marginTop: 20 }}
-        >
-          <Icon name="morehoriz" size={60} color={colours.black} />
-          <Text style={{ fontWeight: "bold", fontSize: 16 }}>More</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => navigation.navigate("Home")}
-          style={{ marginTop: 20 }}
-        >
-          <Icon name="morehoriz" size={60} color={colours.black} />
-          <Text style={{ fontWeight: "bold", fontSize: 16 }}>Workout</Text>
-        </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
   );
@@ -97,14 +113,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    marginTop: 100,
+    marginTop: 50,
   },
   textInput: {
     paddingTop: 20,
     paddingBottom: 20,
     width: 400,
     fontSize: 20,
-    borderBottomColor: "#000",
+    borderBottomColor: colours.black,
     marginBottom: 10,
     textAlign: "center",
   },
@@ -112,7 +128,7 @@ const styles = StyleSheet.create({
     marginTop: 50,
     height: 70,
     width: 250,
-    backgroundColor: "#026efd",
+    backgroundColor: colours.lightBlue,
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 50,
