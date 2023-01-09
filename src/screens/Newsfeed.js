@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   FlatList,
   Text,
@@ -10,7 +10,6 @@ import {
   SafeAreaView,
 } from "react-native";
 import axios from "axios";
-import FastImage from "react-native-fast-image";
 import WeatherComponent from "../components/WeatherComponent";
 //import { Linking } from "react-native";
 

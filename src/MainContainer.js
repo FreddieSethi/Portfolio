@@ -280,7 +280,16 @@ function App() {
         }}
       />
 
-      <Stack.Screen name="Reminders" component={ItemList} />
+      <Stack.Screen
+        name="Reminders"
+        component={ItemList}
+        options={{
+          headerTitle: () => <Header name="Reminders" />,
+          headerStyle: styles.headerStyle,
+          headerBackTitleVisible: false,
+          headerTintColor: colours.black,
+        }}
+      />
       <Stack.Screen
         name="Details View"
         component={DetailsScreen}

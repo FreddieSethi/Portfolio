@@ -71,7 +71,7 @@ export default function App() {
             description={item.description}
           ></MarkerComponent>
         ))}
-        {console.log("Markers: ", data.gyms.latitude)}
+        {console.log("Markers: ", data?.gyms?.latitude)}
       </MapView>
       <View>
         {/* location button */}

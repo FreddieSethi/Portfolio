@@ -83,6 +83,7 @@ const styles = StyleSheet.create({
   screen: {
     alignItems: "center",
     flex: 1,
+    marginTop: 20,
   },
   title: {
     padding: 20,

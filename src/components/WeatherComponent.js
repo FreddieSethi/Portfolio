@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import colours from "../config/colours";
 import themeContext from "../config/themeContext";
-import { color } from "react-native-elements/dist/helpers";
 
 export default function App() {
   let KEY = "1c33a2c342d2362b76d7c3b3b24e3ae9";
