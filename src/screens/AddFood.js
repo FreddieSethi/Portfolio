@@ -6,13 +6,14 @@ import {
   TouchableOpacity,
   FlatList,
 } from "react-native";
-import { useState } from "react";
-import { SearchBar } from "react-native-elements";
+import { useState, useContext } from "react";
 import { useNavigation } from "@react-navigation/native";
 import nutrientAPI from "../data/nutrientAPI.json";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import colours from "../config/colours";
 import { TextInput } from "react-native-gesture-handler";
+import themeContext from "../config/themeContext";
+import theme from "../config/theme";
 
 const DATA = Object.values(nutrientAPI);
 console.log(DATA);
@@ -39,6 +40,7 @@ const Item = ({
 );
 
 function MyFlatList({ DATA, onItemPress }) {
+  const theme = useContext(themeContext);
   return (
     <FlatList
       data={DATA}
@@ -96,7 +98,7 @@ const AddFoodScreen = () => {
         </View>
         <View style={{ flexDirection: "row" }}>
           <TouchableOpacity onPress={() => navigation.navigate("Camera")}>
-            <Icon name="photo-camera" size={60} color={colours.black} />
+            <Icon name="photo-camera" size={60} color={theme.color} />
           </TouchableOpacity>
         </View>
       </View>

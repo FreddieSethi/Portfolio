@@ -1,10 +1,12 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Switch } from "react-native";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import * as LocalAuthentication from "expo-local-authentication";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import themeContext from "../config/themeContext";
 
 export default function App() {
+  const theme = useContext(themeContext);
   let [isAuthenticated, setIsAuthenticated] = useState(false);
   let [authEnabled, setAuthEnabled] = useState(true);
 
@@ -41,16 +43,18 @@ export default function App() {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <View
+      style={[styles.container, { backgroundColor: theme.backgroundColor }]}
+    >
       <Switch value={authEnabled} onValueChange={setAuthEnabled} />
       {authEnabled ? (
-        <Text>
+        <Text style={{ color: theme.color }}>
           {isAuthenticated
             ? "Authentication is turned on"
             : "Uh oh! Access Denied"}
         </Text>
       ) : (
-        <Text>Authentication is turned off</Text>
+        <Text style={{ color: theme.color }}>Authentication is turned off</Text>
       )}
       <StatusBar style="auto" />
     </View>

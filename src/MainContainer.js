@@ -39,8 +39,6 @@ import themeContext from "./config/themeContext";
 import theme from "./config/theme";
 import { MenuProvider } from "react-native-popup-menu";
 
-import Modal from "./screens/Modal";
-
 const Stack = createStackNavigator();
 
 function App() {
@@ -273,7 +271,7 @@ function App() {
         name="Newsfeed"
         component={Newsfeed}
         options={{
-          headerTitle: () => <Header name="Meal Planner" />,
+          headerTitle: () => <Header name="Newsfeed" />,
           headerStyle: styles.headerStyle,
           headerBackTitleVisible: false,
           headerTintColor: colours.black,
@@ -316,16 +314,6 @@ function App() {
         component={Authentication}
         options={{
           headerTitle: () => <Header name="Authentication" />,
-          headerStyle: styles.headerStyle,
-          headerBackTitleVisible: false,
-          headerTintColor: colours.black,
-        }}
-      />
-      <Stack.Screen
-        name="Modal"
-        component={Modal}
-        options={{
-          headerTitle: () => <Header name="Modal" />,
           headerStyle: styles.headerStyle,
           headerBackTitleVisible: false,
           headerTintColor: colours.black,

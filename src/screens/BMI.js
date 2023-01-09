@@ -17,11 +17,12 @@ import { Table, Rows } from "react-native-table-component";
 // Calculate the BMI and set the value in the state
 const BmiCalc = () => {
   const theme = useContext(themeContext);
-  const [weight, setWeight] = useState("");
-  const [height, setHeight] = useState("");
-  const [bmi, setBmi] = useState("");
-  const [desciption, setDesciption] = useState("");
+  const [weight, setWeight] = useState(""); // State for the weight input
+  const [height, setHeight] = useState(""); // State for the height input
+  const [bmi, setBmi] = useState(""); // State for the BMI value
+  const [desciption, setDesciption] = useState(""); // State for the BMI description
 
+  // Function to calculate the BMI and set the BMI and description states
   const calcBmi = () => {
     const bmi = weight / ((height / 100) * (height / 100));
     setBmi(bmi.toFixed(1));
@@ -38,6 +39,7 @@ const BmiCalc = () => {
     }
   };
 
+  // Data for the table showing the BMI categories
   const data = [
     ["Low", "<18.5"],
     ["Healthy", "18.5-24.9"],
@@ -53,6 +55,7 @@ const BmiCalc = () => {
       style={[styles.container, { backgroundColor: theme.backgroundColor }]}
     >
       <View>
+        {/* Weight input field */}
         <TextInput
           style={[styles.input, { borderColor: theme.color }]}
           value={weight}
@@ -61,6 +64,7 @@ const BmiCalc = () => {
           placeholderTextColor={theme.color}
           keyboardType="numeric" // Display a numeric keyboard
         />
+        {/* Height input field */}
         <TextInput
           style={[styles.input, { borderColor: theme.color }]}
           value={height}

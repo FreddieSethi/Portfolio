@@ -14,13 +14,14 @@ import { useNavigation } from "@react-navigation/native";
 import themeContext from "../config/themeContext";
 import colours from "../config/colours";
 
+// Login screen where users can enter their email and password to log in
 const Login = () => {
   const theme = useContext(themeContext);
   const navigation = useNavigation();
   const [email, setEmail] = useState("");
-
   const [password, setPassword] = useState("");
 
+  // Function to log in the user with their email and password
   loginUser = async (email, password) => {
     try {
       await firebase.auth().signInWithEmailAndPassword(email, password);
@@ -29,7 +30,7 @@ const Login = () => {
     }
   };
 
-  // forget password
+  // Function to send a password reset email to the user's email address
   const forgetPassword = () => {
     firebase
       .auth()
@@ -43,6 +44,7 @@ const Login = () => {
   };
 
   return (
+    // Allows user to dismiss keyboard
     <ScrollView
       keyboardShouldPersistTaps="handled"
       contentContainerStyle={[
@@ -51,6 +53,7 @@ const Login = () => {
         { flexGrow: 1 },
       ]}
     >
+      {/* Email input field */}
       <View style={{ marginTop: 20 }}>
         <TextInput
           style={styles.textInput}
@@ -59,6 +62,7 @@ const Login = () => {
           autoCapitalize="none"
           autoCorrect={false}
         />
+        {/* Password input field */}
         <TextInput
           style={styles.textInput}
           placeholder="Password"
@@ -68,6 +72,8 @@ const Login = () => {
           secureTextEntry={true}
         />
       </View>
+
+      {/* Button to log in the user */}
       <TouchableOpacity
         onPress={() => loginUser(email, password)}
         style={styles.button}
@@ -75,13 +81,12 @@ const Login = () => {
         <Text style={{ fontWeight: "bold", fontSize: 22 }}>Login</Text>
       </TouchableOpacity>
 
+      {/* Button to navigate to the registration screen */}
       <TouchableOpacity
         onPress={() => navigation.navigate("Registration")}
         style={{ marginTop: 20 }}
       >
-        <Text style={{ fontWeight: "bold", fontSize: 16 }}>
-          Don't have an account? Register Now
-        </Text>
+        <Text style={styles.subText}>Don't have an account? Register Now</Text>
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => {
@@ -89,9 +94,7 @@ const Login = () => {
         }}
         style={{ marginTop: 20 }}
       >
-        <Text style={{ fontWeight: "bold", fontSize: 16 }}>
-          Forget Password
-        </Text>
+        <Text style={styles.subText}>Forget Password</Text>
       </TouchableOpacity>
     </ScrollView>
   );
@@ -125,5 +128,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 50,
+  },
+  subText: {
+    fontWeight: "bold",
+    fontSize: 16,
   },
 });
