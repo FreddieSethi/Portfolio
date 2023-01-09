@@ -25,9 +25,7 @@ const WorkoutScreen = ({ route }) => {
       <TouchableOpacity
         style={styles.finishButtonContainer}
         onPress={() => {
-          Alert.alert("🎉 What a BEAST! 🎉", "Nice workout", [
-            { text: "thx, I know!" },
-          ]);
+          Alert.alert("Nice workout", [{ text: "as always!" }]);
           navigation.navigate("Home");
         }}
       >

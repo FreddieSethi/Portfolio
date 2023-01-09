@@ -178,14 +178,12 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 30,
-
     marginLeft: 32,
     marginBottom: 10,
     color: colours.black,
   },
   subText: {
     fontSize: 16,
-
     color: colours.black,
     marginLeft: 24,
     marginBottom: 16,

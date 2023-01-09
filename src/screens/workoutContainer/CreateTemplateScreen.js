@@ -1,5 +1,12 @@
 import { useState } from "react";
-import { TextInput, View, StyleSheet, Text, ScrollView } from "react-native";
+import {
+  TextInput,
+  View,
+  StyleSheet,
+  Text,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
 import { Formik } from "formik";
 import Workout from "../../components/createTemplateForm/Workout";
 import EndFormButtons from "../../components/createTemplateForm/EndFormButtons";
@@ -7,6 +14,7 @@ import { writeFormData } from "../../data/firestopreRealTime";
 import { formatFormForFirebaseUpload } from "./formFormatter";
 import { useNavigation } from "@react-navigation/native";
 import { setDataFromDB } from "./HomeScreen";
+import colours from "../../config/colours";
 
 const submitForm = (values, navigation, setWorkouts) => {
   const form = formatFormForFirebaseUpload(values);
@@ -34,9 +42,7 @@ const CreateTemplateScreen = ({ route }) => {
       {({ handleChange, handleBlur, setFieldValue, handleSubmit, values }) => (
         <ScrollView>
           <View>
-            <View style={styles.workoutTitleContainer}>
-              <Text style={styles.workoutTitle}>⚙️ Workout Title ⚙️</Text>
-            </View>
+            <View style={styles.workoutTitleContainer}></View>
             <TextInput
               style={[
                 styles.textInput,
@@ -63,7 +69,17 @@ const CreateTemplateScreen = ({ route }) => {
               );
             })}
 
+            <TouchableOpacity
+              handleSubmit={handleSubmit}
+              workoutsNum={workoutsNum}
+              setWorkoutsNum={setWorkoutsNum}
+              style={styles.button}
+            >
+              <Text style={{ fontSize: 18, fontWeight: "bold" }}>Submit</Text>
+            </TouchableOpacity>
+
             <EndFormButtons
+              style={styles.button}
               handleSubmit={handleSubmit}
               workoutsNum={workoutsNum}
               setWorkoutsNum={setWorkoutsNum}
@@ -89,6 +105,15 @@ const styles = StyleSheet.create({
   workoutTitleContainer: {
     marginVertical: 24,
     alignItems: "center",
+  },
+  button: {
+    marginTop: 30,
+    height: 70,
+    width: 140,
+    backgroundColor: colours.lightBlue,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 50,
   },
 });
 
