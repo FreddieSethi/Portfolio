@@ -45,7 +45,6 @@ const styles = StyleSheet.create({
     marginVertical: 16,
   },
   buttonText: {
-    fontFamily: "LexendDeca_400Regular",
     fontSize: 17,
     color: "rgb(0, 122,225)",
   },

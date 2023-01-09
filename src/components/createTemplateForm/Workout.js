@@ -67,7 +67,6 @@ const Workout = ({
 
 const styles = StyleSheet.create({
   textInput: {
-    fontFamily: "LexendDeca_400Regular",
     backgroundColor: "rgba(158, 150, 150, .2)",
     marginHorizontal: 16,
     borderRadius: 8,
@@ -95,7 +94,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: "white",
-    fontFamily: "LexendDeca_400Regular",
+
     fontSize: 22,
   },
   titleContainer: {
@@ -123,7 +122,6 @@ const styles = StyleSheet.create({
   setWeightReps: {
     flex: 1,
     textAlign: "center",
-    fontFamily: "LexendDeca_400Regular",
   },
 });
 export default Workout;

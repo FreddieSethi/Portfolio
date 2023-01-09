@@ -53,7 +53,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   icon: { width: 32, height: 32 },
-  textStyles: {
-    fontFamily: "LexendDeca_400Regular",
-  },
+  textStyles: {},
 });

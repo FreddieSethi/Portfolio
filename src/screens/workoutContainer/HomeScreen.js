@@ -3,11 +3,6 @@ import {
   Text,
   ScrollView,
   ActivityIndicator,
-  useFonts,
-  LexendDeca_300Light,
-  LexendDeca_400Regular,
-  LexendDeca_500Medium,
-  LexendDeca_700Bold,
   useEffect,
   useState,
   WorkoutCardWithPressMenu,
@@ -23,13 +18,6 @@ const HomeScreen = () => {
   const [workouts, setWorkouts] = useState([]);
   const [itemChange, SetItemChange] = useState(false);
   const [dataLoaded, setDataLoaded] = useState(false);
-
-  let [fontsLoaded] = useFonts({
-    LexendDeca_300Light,
-    LexendDeca_400Regular,
-    LexendDeca_500Medium,
-    LexendDeca_700Bold,
-  });
 
   useEffect(() => {
     setDataFromDB(setWorkouts);
@@ -51,7 +39,7 @@ const HomeScreen = () => {
       });
   }, []);
 
-  if (fontsLoaded && dataLoaded) {
+  if (dataLoaded) {
     return (
       <>
         <View style={styles.home}>
@@ -88,7 +76,7 @@ const styles = StyleSheet.create({
   home: { flex: 1, backgroundColor: "white" },
   text: {
     fontSize: 30,
-    fontFamily: "LexendDeca_700Bold",
+
     marginLeft: 24,
     marginTop: 32,
     marginBottom: 16,
@@ -96,7 +84,7 @@ const styles = StyleSheet.create({
   },
   subText: {
     fontSize: 16,
-    fontFamily: "LexendDeca_400Regular",
+
     color: colours.black,
     marginLeft: 24,
     marginBottom: 16,

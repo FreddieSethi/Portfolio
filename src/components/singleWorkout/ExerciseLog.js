@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: "white",
-    fontFamily: "LexendDeca_400Regular",
+
     fontSize: 22,
   },
   checkbox: {
@@ -111,7 +111,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
   },
   textFont: {
-    fontFamily: "LexendDeca_400Regular",
     color: colours.black,
   },
 });

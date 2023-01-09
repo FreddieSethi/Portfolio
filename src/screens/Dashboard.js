@@ -178,14 +178,14 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 30,
-    fontFamily: "LexendDeca_700Bold",
+
     marginLeft: 32,
     marginBottom: 10,
     color: colours.black,
   },
   subText: {
     fontSize: 16,
-    fontFamily: "LexendDeca_400Regular",
+
     color: colours.black,
     marginLeft: 24,
     marginBottom: 16,

@@ -43,7 +43,6 @@ const CreateTemplateScreen = ({ route }) => {
                 {
                   marginHorizontal: 24,
                   marginBottom: 24,
-                  fontFamily: "LexendDeca_400Regular",
                 },
               ]}
               placeholder="Workout name"
@@ -84,7 +83,6 @@ const styles = StyleSheet.create({
     fontSize: 25,
   },
   workoutTitle: {
-    fontFamily: "LexendDeca_400Regular",
     fontWeight: "bold",
     fontSize: 24,
   },

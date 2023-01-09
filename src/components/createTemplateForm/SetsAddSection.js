@@ -20,7 +20,6 @@ export default function SetsAddSection({
         style={{
           flex: 1,
           textAlign: "center",
-          fontFamily: "LexendDeca_400Regular",
         }}
       >
         {setIndex + 1}
@@ -65,7 +64,6 @@ export default function SetsAddSection({
 
 const styles = StyleSheet.create({
   textInputSmall: {
-    fontFamily: "LexendDeca_400Regular",
     backgroundColor: "rgba(150, 150, 150, .1)",
     borderRadius: 4,
     padding: 3,

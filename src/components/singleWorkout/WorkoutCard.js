@@ -63,11 +63,10 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
   },
-  title: { color: "white", fontFamily: "LexendDeca_400Regular", fontSize: 22 },
+  title: { color: "white", fontSize: 22 },
   lastPerformed: {
     color: "white",
     fontSize: 13,
-    fontFamily: "LexendDeca_400Regular",
   },
   workoutNameContainer: {
     flexDirection: "row",
@@ -75,7 +74,7 @@ const styles = StyleSheet.create({
   },
   workoutName: {
     fontSize: 16,
-    fontFamily: "LexendDeca_400Regular",
+
     marginHorizontal: 24,
     marginBottom: 8,
   },

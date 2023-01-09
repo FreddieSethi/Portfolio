@@ -35,7 +35,6 @@ const WorkoutScreen = ({ route }) => {
           <Text
             style={{
               color: "white",
-              fontFamily: "LexendDeca_500Medium",
             }}
           >
             Finish
@@ -54,7 +53,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontWeight: "bold",
-    fontFamily: "LexendDeca_400Regular",
+
     fontSize: 24,
     color: colours.black,
   },

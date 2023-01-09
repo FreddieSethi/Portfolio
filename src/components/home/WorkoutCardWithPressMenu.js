@@ -57,7 +57,6 @@ const WorkoutCardWithPressMenu = (props) => {
           >
             <Text
               style={{
-                fontFamily: "LexendDeca_700Bold",
                 fontSize: 19,
                 color: "white",
               }}
@@ -76,7 +75,7 @@ const WorkoutCardWithPressMenu = (props) => {
             <Text
               style={{
                 padding: 36,
-                fontFamily: "LexendDeca_400Regular",
+
                 fontSize: 16,
                 color: "red",
               }}
