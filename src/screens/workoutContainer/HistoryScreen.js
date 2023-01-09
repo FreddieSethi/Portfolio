@@ -11,7 +11,6 @@ import { getWorkoutDays } from "../../data/firestopreRealTime";
 
 const initialDate = getTodaysDate();
 
-// const testIDs = [1, 2, 3, 4, 5, 6];
 const NewCalendarListScreen = () => {
   const [selected, setSelected] = useState(initialDate);
   const [isHorizontal, setIsHorizontal] = useState(false);
@@ -60,10 +59,7 @@ const NewCalendarListScreen = () => {
         key={Number(isHorizontal)} // only for this example - to force rerender
         horizontal={isHorizontal}
         staticHeader
-        // initialDate={initialDate}
-        // scrollRange={10}
         calendarProps={calendarProps}
-        // testID={testIDs.horizontalList.CONTAINER}
       />
     </View>
   );

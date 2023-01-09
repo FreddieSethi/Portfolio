@@ -7,16 +7,12 @@ import {
   FlatList,
 } from "react-native";
 import { useState } from "react";
-
 import { SearchBar } from "react-native-elements";
-
 import { useNavigation } from "@react-navigation/native";
-
 import nutrientAPI from "../data/nutrientAPI.json";
-
 import Icon from "react-native-vector-icons/MaterialIcons";
-
 import colours from "../config/colours";
+import { TextInput } from "react-native-gesture-handler";
 
 const DATA = Object.values(nutrientAPI);
 console.log(DATA);
@@ -42,30 +38,70 @@ const Item = ({
   </TouchableOpacity>
 );
 
-const handlePress = (item) => {
-  // Navigate to the Details screen and pass the item as a parameter
+function MyFlatList({ DATA, onItemPress }) {
+  return (
+    <FlatList
+      data={DATA}
+      renderItem={({ item }) => (
+        <TouchableOpacity onPress={() => onItemPress(item)}>
+          <View>
+            <Text style={styles.food}>{food}</Text>
+            <Text>Calories: {calories}</Text>
+            <Text>Protein: {protein} grams</Text>
+            <Text>Carbs: {carbs} grams</Text>
+            <Text>Fats: {fats} grams</Text>
+            <Text>Sugar: {sugar} grams</Text>
+            <Text>Sodium: {sodium} milligrams</Text>
+          </View>
+        </TouchableOpacity>
+      )}
+      keyExtractor={(item) => item.id}
+    />
+  );
+}
+
+function App() {
   const navigation = useNavigation();
-  navigation.navigate("Details", { item });
-};
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const handleItemPress = (item) => {
+    setSelectedItem(item);
+    // You can navigate to another screen here using the `navigate` function
+    // of a navigation object.
+    navigation.navigate("Dashboard", { selectedItem });
+  };
+
+  return <MyFlatList data onItemPress={handleItemPress} />;
+}
 
 const AddFoodScreen = () => {
   const navigation = useNavigation();
   const [searchTerm, setSearchTerm] = useState("");
   return (
     <SafeAreaView>
-      <View>
-        <TouchableOpacity onPress={() => navigation.navigate("Camera")}>
-          <Icon name="photo-camera" size={60} color={colours.black} />
-        </TouchableOpacity>
-        <SearchBar
-          placeholder="Search for food..."
-          onChangeText={setSearchTerm}
-          value={searchTerm}
-        />
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <View style={{ flexDirection: "row" }}>
+          <TextInput
+            style={styles.searchBar}
+            placeholder="Search for food..."
+            onChangeText={setSearchTerm}
+            value={searchTerm}
+          />
+        </View>
+        <View style={{ flexDirection: "row" }}>
+          <TouchableOpacity onPress={() => navigation.navigate("Camera")}>
+            <Icon name="photo-camera" size={60} color={colours.black} />
+          </TouchableOpacity>
+        </View>
       </View>
       <View>
         <FlatList
-          //data={DATA}
           data={DATA.filter((item) => item.food.includes(searchTerm))}
           renderItem={({ item }) => (
             <Item
@@ -76,23 +112,9 @@ const AddFoodScreen = () => {
               fats={item.fats}
               sugar={item.sugar}
               sodium={item.sodium}
-              onPress={() => handlePress(item)}
             />
           )}
           keyExtractor={(item) => item.food}
-          // renderItem={({ item }) => (
-          //   <Item
-          //     food={item.food}
-          //     calories={item.calories}
-          //     protein={item.protein}
-          //     carbs={item.carbs}
-          //     fats={item.fats}
-          //     sugar={item.sugar}
-          //     sodium={item.sodium}
-          //     onPress={() => handlePress(item)}
-          //   />
-          // )}
-          // keyExtractor={(item) => item.id}
           style={styles.list}
         />
       </View>
@@ -122,7 +144,6 @@ const styles = StyleSheet.create({
 
   list: {
     backgroundColor: "#eee",
-    paddingTop: 100,
   },
   item: {
     backgroundColor: colours.white,
@@ -133,5 +154,14 @@ const styles = StyleSheet.create({
   food: {
     fontSize: 24,
     fontWeight: "bold",
+  },
+  searchBar: {
+    backgroundColor: "white",
+    borderWidth: 1,
+    borderColor: "lightgrey",
+    borderRadius: 5,
+    width: 300,
+    height: 50,
+    paddingLeft: 10,
   },
 });

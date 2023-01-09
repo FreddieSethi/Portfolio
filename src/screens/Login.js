@@ -3,14 +3,19 @@ import {
   Text,
   TouchableOpacity,
   TextInput,
+  ScrollView,
   StyleSheet,
 } from "react-native";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { firebase } from "../config/firebase";
 import { useNavigation } from "@react-navigation/native";
 
+import themeContext from "../config/themeContext";
+import colours from "../config/colours";
+
 const Login = () => {
+  const theme = useContext(themeContext);
   const navigation = useNavigation();
   const [email, setEmail] = useState("");
 
@@ -38,9 +43,15 @@ const Login = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={{ fontWeight: "bold", fontSize: 26 }}>Login</Text>
-      <View style={{ marginTop: 40 }}>
+    <ScrollView
+      keyboardShouldPersistTaps="handled"
+      contentContainerStyle={[
+        styles.container,
+        { backgroundColor: theme.backgroundColor },
+        { flexGrow: 1 },
+      ]}
+    >
+      <View style={{ marginTop: 20 }}>
         <TextInput
           style={styles.textInput}
           placeholder="Email"
@@ -82,7 +93,7 @@ const Login = () => {
           Forget Password
         </Text>
       </TouchableOpacity>
-    </View>
+    </ScrollView>
   );
 };
 
@@ -97,17 +108,22 @@ const styles = StyleSheet.create({
   textInput: {
     paddingTop: 20,
     paddingBottom: 20,
-    width: 400,
+    width: 300,
     fontSize: 20,
-    borderBottomColor: "#000",
-    marginBottom: 10,
+
+    borderColor: colours.black,
+    borderWidth: 1,
+    borderStyle: "solid",
+
+    marginBottom: 15,
     textAlign: "center",
+    borderRadius: 10,
   },
   button: {
     marginTop: 50,
     height: 70,
     width: 250,
-    backgroundColor: "#026efd",
+    backgroundColor: colours.lightBlue,
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 50,

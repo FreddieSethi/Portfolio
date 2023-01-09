@@ -46,7 +46,7 @@ const CreateTemplateScreen = ({ route }) => {
                   fontFamily: "LexendDeca_400Regular",
                 },
               ]}
-              placeholder="Push Workout V1"
+              placeholder="Workout name"
               onChangeText={handleChange("templateName")}
               onBlur={handleBlur("templateName")}
               value={values.templateName}

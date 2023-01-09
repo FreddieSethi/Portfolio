@@ -1,7 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View, TouchableHighlight } from "react-native";
 import colours from "../config/colours";
-
 import Swipeable from "react-native-gesture-handler/Swipeable";
 
 const RowCard = ({ onPress, name, date, id, renderRightActions }) => {

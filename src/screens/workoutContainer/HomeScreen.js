@@ -16,8 +16,10 @@ import {
   StyleSheet,
 } from "../../components/home/homeBarrel";
 import colours from "../../config/colours";
+import { firebase } from "../../config/firebase";
 
 const HomeScreen = () => {
+  const [name, setName] = useState("");
   const [workouts, setWorkouts] = useState([]);
   const [itemChange, SetItemChange] = useState(false);
   const [dataLoaded, setDataLoaded] = useState(false);
@@ -34,13 +36,29 @@ const HomeScreen = () => {
     setDataLoaded(true);
   }, [itemChange]);
 
+  useEffect(() => {
+    firebase
+      .firestore()
+      .collection("users")
+      .doc(firebase.auth().currentUser.uid)
+      .get()
+      .then((snapshot) => {
+        if (snapshot.exists) {
+          setName({ firstName: snapshot.data().firstName });
+        } else {
+          console.log("User does not exist");
+        }
+      });
+  }, []);
+
   if (fontsLoaded && dataLoaded) {
     return (
       <>
         <View style={styles.home}>
           <ScrollView>
-            <Text style={styles.heroText}>Hi Laith 👋</Text>
-            <Text style={styles.subHeroText}>What are we hitting today?</Text>
+            <Text style={styles.subText}>
+              What are we hitting today {name.firstName}?
+            </Text>
 
             <Boxes setWorkouts={setWorkouts} />
 
@@ -68,20 +86,21 @@ const HomeScreen = () => {
 };
 const styles = StyleSheet.create({
   home: { flex: 1, backgroundColor: "white" },
-  heroText: {
-    fontSize: 29,
+  text: {
+    fontSize: 30,
     fontFamily: "LexendDeca_700Bold",
     marginLeft: 24,
     marginTop: 32,
     marginBottom: 16,
     color: colours.black,
   },
-  subHeroText: {
+  subText: {
     fontSize: 16,
     fontFamily: "LexendDeca_400Regular",
     color: colours.black,
     marginLeft: 24,
     marginBottom: 16,
+    marginTop: 30,
   },
 });
 

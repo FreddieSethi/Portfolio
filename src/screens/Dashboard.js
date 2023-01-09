@@ -13,9 +13,13 @@ import colours from "../config/colours";
 import { ScrollView } from "react-native-gesture-handler";
 import Icon from "react-native-vector-icons/Ionicons";
 
-const Dashboard = () => {
+function Dashboard({ route }) {
+  // const { selectedItem } = route.params;
+  // console.log(selectedItem);
+
   const navigation = useNavigation();
-  const [name, setName] = useState("");
+  //const [name, setName] = useState("");
+  const [name, setName] = useState({ firstName: "" });
 
   // change the password
   const changePassword = () => {
@@ -38,7 +42,7 @@ const Dashboard = () => {
       .get()
       .then((snapshot) => {
         if (snapshot.exists) {
-          setName(snapshot.data());
+          setName({ firstName: snapshot.data().firstName });
         } else {
           console.log("User does not exist");
         }
@@ -48,12 +52,16 @@ const Dashboard = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        <Text style={{ fontSize: 20, fontWeight: "bold" }}>
-          Hello, {name.firstName}
-        </Text>
+        <Text style={styles.text}>Hello, {name.firstName}</Text>
 
-        <View style={{ flexDirection: "row" }}>
-          <View style={{ flexDirection: "row", flex: 1 }}>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <View style={{ flexDirection: "row" }}>
             <TouchableOpacity
               onPress={() => navigation.navigate("Add Food")}
               style={{ marginTop: 20 }}
@@ -63,7 +71,7 @@ const Dashboard = () => {
             </TouchableOpacity>
           </View>
 
-          <View style={{ flexDirection: "row", flex: 2 }}>
+          <View style={{ flexDirection: "row" }}>
             <TouchableOpacity
               onPress={() => navigation.navigate("Home")}
               style={{ marginTop: 20 }}
@@ -72,7 +80,7 @@ const Dashboard = () => {
               <Text style={{ fontWeight: "bold", fontSize: 16 }}>Workout</Text>
             </TouchableOpacity>
           </View>
-          <View style={{ flexDirection: "row-reverse", flex: 3 }}>
+          <View style={{ flexDirection: "row" }}>
             <TouchableOpacity
               onPress={() => navigation.navigate("More")}
               style={{ marginTop: 20 }}
@@ -83,47 +91,64 @@ const Dashboard = () => {
           </View>
         </View>
 
+        <View>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Modal")}
+            style={{ marginTop: 20 }}
+          >
+            <Text style={{ fontWeight: "bold", fontSize: 16 }}>Modal</Text>
+          </TouchableOpacity>
+        </View>
+
         <View style={{ marginTop: 40 }}>
-          <Text style={styles.text}>Calories: </Text>
-          <Text style={styles.text}>Protein: </Text>
-          <Text style={styles.text}>Carbohydrates: </Text>
-          <Text style={styles.text}>Fat: </Text>
+          <Text style={styles.subText}>Calories: </Text>
+          <Text style={styles.subText}>Protein: </Text>
+          <Text style={styles.subText}>Carbohydrates: </Text>
+          <Text style={styles.subText}>Fat: </Text>
         </View>
 
         <TouchableOpacity
-          onPress={() => {
-            changePassword();
-          }}
+          onPress={() => navigation.navigate("Edit Macros")}
           style={styles.button}
         >
-          <Text style={{ fontSize: 22, fontWeight: "bold" }}>
-            Edit Calories
-          </Text>
+          <Text style={{ fontSize: 18, fontWeight: "bold" }}>Edit Macros</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity
-          onPress={() => {
-            changePassword();
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
           }}
-          style={styles.button}
         >
-          <Text style={{ fontSize: 22, fontWeight: "bold" }}>
-            Change Password
-          </Text>
-        </TouchableOpacity>
+          <View style={{ flexDirection: "row" }}>
+            <TouchableOpacity
+              onPress={() => {
+                changePassword();
+              }}
+              style={styles.button}
+            >
+              <Text style={{ fontSize: 18, fontWeight: "bold" }}>
+                Change Password
+              </Text>
+            </TouchableOpacity>
+          </View>
 
-        <TouchableOpacity
-          onPress={() => {
-            firebase.auth().signOut();
-          }}
-          style={styles.button}
-        >
-          <Text style={{ fontSize: 22, fontWeight: "bold" }}>Sign out</Text>
-        </TouchableOpacity>
+          <View style={{ flexDirection: "row" }}>
+            <TouchableOpacity
+              onPress={() => {
+                firebase.auth().signOut();
+              }}
+              style={styles.button}
+            >
+              <Text style={{ fontSize: 18, fontWeight: "bold" }}>Sign out</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
-};
+}
 
 export default Dashboard;
 
@@ -143,16 +168,26 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   button: {
-    marginTop: 50,
+    marginTop: 30,
     height: 70,
-    width: 250,
+    width: 140,
     backgroundColor: colours.lightBlue,
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 50,
   },
   text: {
-    fontSize: 22,
-    fontWeight: "bold",
+    fontSize: 30,
+    fontFamily: "LexendDeca_700Bold",
+    marginLeft: 32,
+    marginBottom: 10,
+    color: colours.black,
+  },
+  subText: {
+    fontSize: 16,
+    fontFamily: "LexendDeca_400Regular",
+    color: colours.black,
+    marginLeft: 24,
+    marginBottom: 16,
   },
 });

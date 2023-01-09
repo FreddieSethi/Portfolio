@@ -58,6 +58,7 @@ export default function App() {
         showsMyLocationButton={true}
       >
         <Marker region={mapRegion} />
+
         {data.map((item) => (
           // loads all marker from component from gymData
           <MarkerComponent

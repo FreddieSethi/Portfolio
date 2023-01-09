@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import { View, StyleSheet, Text, TouchableWithoutFeedback } from "react-native";
-import { color } from "react-native-elements/dist/helpers";
+
 import colours from "../../config/colours";
 
 const WorkoutCard = ({ workout }) => {

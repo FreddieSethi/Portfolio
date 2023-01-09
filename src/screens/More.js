@@ -27,8 +27,14 @@ const Dashboard = () => {
             />
           </TouchableOpacity>
         </View>
-        <View style={{ flexDirection: "row", alignContent: "flex-end" }}>
-          <View style={{ flexDirection: "row", flex: 1 }}>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <View style={{ flexDirection: "row" }}>
             <TouchableOpacity
               onPress={() => navigation.navigate("BMI")}
               style={styles.button}
@@ -37,7 +43,7 @@ const Dashboard = () => {
             </TouchableOpacity>
           </View>
 
-          <View style={{ flexDirection: "row", flex: 2 }}>
+          <View style={{ flexDirection: "row" }}>
             <TouchableOpacity
               onPress={() => navigation.navigate("Pace")}
               style={styles.button}
@@ -45,7 +51,7 @@ const Dashboard = () => {
               <Text style={{ fontWeight: "bold", fontSize: 16 }}>Pace</Text>
             </TouchableOpacity>
           </View>
-          <View style={{ flexDirection: "row-reverse", flex: 3 }}>
+          <View style={{ flexDirection: "row" }}>
             <TouchableOpacity
               onPress={() => navigation.navigate("Waist to Hip Calculator")}
               style={styles.button}
@@ -55,8 +61,14 @@ const Dashboard = () => {
           </View>
         </View>
 
-        <View style={{ flexDirection: "row" }}>
-          <View style={{ flexDirection: "row", flex: 1 }}>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <View style={{ flexDirection: "row" }}>
             <TouchableOpacity
               onPress={() => navigation.navigate("Gyms Nearby")}
               style={{ marginTop: 20 }}
@@ -68,7 +80,7 @@ const Dashboard = () => {
             </TouchableOpacity>
           </View>
 
-          <View style={{ flexDirection: "row", flex: 2 }}>
+          <View style={{ flexDirection: "row" }}>
             <TouchableOpacity
               onPress={() => navigation.navigate("Meal Planner")}
               style={{ marginTop: 20 }}
@@ -79,7 +91,7 @@ const Dashboard = () => {
               </Text>
             </TouchableOpacity>
           </View>
-          <View style={{ flexDirection: "row-reverse", flex: 3 }}>
+          <View style={{ flexDirection: "row-reverse" }}>
             <TouchableOpacity
               onPress={() => navigation.navigate("Newsfeed")}
               style={{ marginTop: 20 }}
@@ -90,8 +102,14 @@ const Dashboard = () => {
           </View>
         </View>
 
-        <View style={{ flexDirection: "row" }}>
-          <View style={{ flexDirection: "row", flex: 1 }}>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <View style={{ flexDirection: "row" }}>
             <TouchableOpacity
               onPress={() => navigation.navigate("Reminders")}
               style={{ marginTop: 20 }}
@@ -103,7 +121,7 @@ const Dashboard = () => {
             </TouchableOpacity>
           </View>
 
-          <View style={{ flexDirection: "row", flex: 2 }}>
+          <View style={{ flexDirection: "row" }}>
             <TouchableOpacity
               onPress={() => navigation.navigate("Dark Mode")}
               style={{ marginTop: 20 }}
@@ -114,7 +132,7 @@ const Dashboard = () => {
               </Text>
             </TouchableOpacity>
           </View>
-          <View style={{ flexDirection: "row-reverse", flex: 3 }}>
+          <View style={{ flexDirection: "row" }}>
             <TouchableOpacity
               onPress={() => navigation.navigate("Authentication")}
               style={{ marginTop: 20 }}

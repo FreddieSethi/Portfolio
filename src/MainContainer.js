@@ -30,6 +30,7 @@ import HistoryScreen from "./screens/workoutContainer/HistoryScreen";
 import HomeScreen from "./screens/workoutContainer/HomeScreen";
 import TimerScreen from "./screens/workoutContainer/TimerScreen";
 import WorkoutScreen from "./screens/workoutContainer/WorkoutScreen";
+import EditMacros from "./screens/EditMacros";
 
 import ItemList from "./components/ItemList";
 import DetailsScreen from "./components/DetailsScreen";
@@ -37,6 +38,8 @@ import DetailsScreen from "./components/DetailsScreen";
 import themeContext from "./config/themeContext";
 import theme from "./config/theme";
 import { MenuProvider } from "react-native-popup-menu";
+
+import Modal from "./screens/Modal";
 
 const Stack = createStackNavigator();
 
@@ -66,6 +69,8 @@ function App() {
           options={{
             headerTitle: () => <Header name="Fitness Buddy" />,
             headerStyle: styles.headerStyle,
+            headerBackTitleVisible: false,
+            headerTintColor: colours.black,
           }}
         />
         <Stack.Screen
@@ -74,6 +79,8 @@ function App() {
           options={{
             headerTitle: () => <Header name="Fitness Buddy" />,
             headerStyle: styles.headerStyle,
+            headerBackTitleVisible: false,
+            headerTintColor: colours.black,
           }}
         />
       </Stack.Navigator>
@@ -87,6 +94,8 @@ function App() {
         options={{
           headerTitle: () => <Header name="Dashboard" />,
           headerStyle: styles.headerStyle,
+          headerBackTitleVisible: false,
+          headerTintColor: colours.black,
         }}
       />
 
@@ -96,6 +105,8 @@ function App() {
         options={{
           headerTitle: () => <Header name="Add Food" />,
           headerStyle: styles.headerStyle,
+          headerBackTitleVisible: false,
+          headerTintColor: colours.black,
         }}
       />
       <Stack.Screen
@@ -104,6 +115,8 @@ function App() {
         options={{
           headerTitle: () => <Header name="Camera" />,
           headerStyle: styles.headerStyle,
+          headerBackTitleVisible: false,
+          headerTintColor: colours.black,
         }}
       />
 
@@ -113,6 +126,8 @@ function App() {
         options={{
           headerTitle: () => <Header name="Home " />,
           headerStyle: styles.headerStyle,
+          headerBackTitleVisible: false,
+          headerTintColor: colours.black,
         }}
       />
       <Stack.Screen
@@ -121,6 +136,8 @@ function App() {
         options={{
           headerTitle: () => <Header name={<StopWatch />} />,
           headerStyle: styles.headerStyle,
+          headerBackTitleVisible: false,
+          headerTintColor: colours.black,
         }}
       />
       <Stack.Screen
@@ -129,6 +146,8 @@ function App() {
         options={{
           headerTitle: () => <Header name="Rest " />,
           headerStyle: styles.headerStyle,
+          headerBackTitleVisible: false,
+          headerTintColor: colours.black,
         }}
       />
       <Stack.Screen
@@ -137,6 +156,8 @@ function App() {
         options={{
           headerTitle: () => <Header name="Timer " />,
           headerStyle: styles.headerStyle,
+          headerBackTitleVisible: false,
+          headerTintColor: colours.black,
         }}
       />
       <Stack.Screen
@@ -145,6 +166,8 @@ function App() {
         options={{
           headerTitle: () => <Header name="Create Template " />,
           headerStyle: styles.headerStyle,
+          headerBackTitleVisible: false,
+          headerTintColor: colours.black,
         }}
       />
       <Stack.Screen
@@ -153,6 +176,18 @@ function App() {
         options={{
           headerTitle: () => <Header name="History" />,
           headerStyle: styles.headerStyle,
+          headerBackTitleVisible: false,
+          headerTintColor: colours.black,
+        }}
+      />
+      <Stack.Screen
+        name="Edit Macros"
+        component={EditMacros}
+        options={{
+          headerTitle: () => <Header name="Edit Macros" />,
+          headerStyle: styles.headerStyle,
+          headerBackTitleVisible: false,
+          headerTintColor: colours.black,
         }}
       />
 
@@ -162,6 +197,8 @@ function App() {
         options={{
           headerTitle: () => <Header name="More" />,
           headerStyle: styles.headerStyle,
+          headerBackTitleVisible: false,
+          headerTintColor: colours.black,
         }}
       />
       <Stack.Screen
@@ -170,30 +207,46 @@ function App() {
         options={{
           headerTitle: () => <Header name="Edit Profile" />,
           headerStyle: styles.headerStyle,
+          headerBackTitleVisible: false,
+          headerTintColor: colours.black,
         }}
       />
       <Stack.Screen
         name="BMI"
         component={BMI}
         options={{
-          headerTitle: () => <Header name="BMI" />,
+          headerTitle: () => <Header name="Calculate BMI" />,
           headerStyle: styles.headerStyle,
+          headerBackTitleVisible: false,
+          headerTintColor: colours.black,
         }}
       />
       <Stack.Screen
         name="Pace"
         component={Pace}
         options={{
-          headerTitle: () => <Header name="Pace" />,
+          headerTitle: () => (
+            <Header name="Calculate Pace" headerTitleAlign="center" />
+          ),
           headerStyle: styles.headerStyle,
+          headerBackTitleVisible: false,
+          headerTintColor: colours.black,
         }}
       />
       <Stack.Screen
         name="Waist to Hip Calculator"
         component={WaistToHip}
         options={{
-          headerTitle: () => <Header name="Waist to Hip Calculator" />,
+          headerTitle: () => (
+            <Header
+              name="Calculate Waist to Hip Ratio"
+              headerTitleAlign="center"
+            />
+          ),
+
           headerStyle: styles.headerStyle,
+          headerBackTitleVisible: false,
+          headerTintColor: colours.black,
         }}
       />
       <Stack.Screen
@@ -202,6 +255,8 @@ function App() {
         options={{
           headerTitle: () => <Header name="Gyms Nearby" />,
           headerStyle: styles.headerStyle,
+          headerBackTitleVisible: false,
+          headerTintColor: colours.black,
         }}
       />
       <Stack.Screen
@@ -210,6 +265,8 @@ function App() {
         options={{
           headerTitle: () => <Header name="Meal Planner" />,
           headerStyle: styles.headerStyle,
+          headerBackTitleVisible: false,
+          headerTintColor: colours.black,
         }}
       />
       <Stack.Screen
@@ -218,6 +275,8 @@ function App() {
         options={{
           headerTitle: () => <Header name="Meal Planner" />,
           headerStyle: styles.headerStyle,
+          headerBackTitleVisible: false,
+          headerTintColor: colours.black,
         }}
       />
 
@@ -228,6 +287,8 @@ function App() {
         options={({ route }) => ({
           headerTitle: () => <Header name={route.params.name} />,
           headerStyle: styles.headerStyle,
+          headerBackTitleVisible: false,
+          headerTintColor: colours.black,
         })}
       />
 
@@ -237,6 +298,8 @@ function App() {
         options={{
           headerTitle: () => <Header name="Dark Mode" />,
           headerStyle: styles.headerStyle,
+          headerBackTitleVisible: false,
+          headerTintColor: colours.black,
         }}
       />
       <Stack.Screen
@@ -245,6 +308,18 @@ function App() {
         options={{
           headerTitle: () => <Header name="Authentication" />,
           headerStyle: styles.headerStyle,
+          headerBackTitleVisible: false,
+          headerTintColor: colours.black,
+        }}
+      />
+      <Stack.Screen
+        name="Modal"
+        component={Modal}
+        options={{
+          headerTitle: () => <Header name="Modal" />,
+          headerStyle: styles.headerStyle,
+          headerBackTitleVisible: false,
+          headerTintColor: colours.black,
         }}
       />
     </Stack.Navigator>
@@ -291,6 +366,7 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 50,
     borderBottomRightRadius: 50,
     backgroundColor: colours.lightBlue,
+
     shadowColor: colours.black,
     elevation: 25,
   },
