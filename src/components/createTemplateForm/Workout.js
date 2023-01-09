@@ -67,7 +67,7 @@ const Workout = ({
 
 const styles = StyleSheet.create({
   textInput: {
-    backgroundColor: "rgba(158, 150, 150, .2)",
+    backgroundColor: colours.lightBlue,
     marginHorizontal: 16,
     borderRadius: 8,
     padding: 5,
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   textInputSmall: {
-    backgroundColor: "rgba(158, 150, 150, .2)",
+    backgroundColor: colours.lightBlue,
     borderRadius: 4,
     padding: 3,
     width: 80,
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   set: {
-    backgroundColor: "white",
+    backgroundColor: colours.white,
     marginBottom: 16,
     marginHorizontal: 24,
     borderWidth: 1,
@@ -93,13 +93,14 @@ const styles = StyleSheet.create({
     paddingBottom: 16,
   },
   title: {
-    color: "white",
+    color: colours.black,
+    fontWeight: "bold",
 
     fontSize: 22,
   },
   titleContainer: {
     height: 48,
-    backgroundColor: colours.black,
+    backgroundColor: colours.lightBlue,
     borderTopLeftRadius: 22,
     borderTopRightRadius: 22,
     paddingLeft: 8,

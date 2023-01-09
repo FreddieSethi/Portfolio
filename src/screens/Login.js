@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
     width: 300,
     fontSize: 20,
     borderColor: colours.black,
-    borderWidth: 1,
+    borderWidth: 1.5,
     borderStyle: "solid",
     marginBottom: 15,
     textAlign: "center",

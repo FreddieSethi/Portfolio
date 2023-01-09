@@ -5,15 +5,17 @@ import {
   SafeAreaView,
   View,
 } from "react-native";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { firebase } from "../config/firebase";
 import { useNavigation } from "@react-navigation/native";
 //import Icon from "react-native-vector-icons/MaterialIcons";
 import colours from "../config/colours";
 import { ScrollView } from "react-native-gesture-handler";
 import Icon from "react-native-vector-icons/Ionicons";
+import themeContext from "../config/themeContext";
 
 function Dashboard({ route }) {
+  const theme = useContext(themeContext);
   // const { selectedItem } = route.params;
   // console.log(selectedItem);
 
@@ -50,9 +52,13 @@ function Dashboard({ route }) {
   }, []);
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView
+      style={[styles.container, { backgroundColor: theme.backgroundColor }]}
+    >
       <ScrollView>
-        <Text style={styles.text}>Hello, {name.firstName}</Text>
+        <Text style={[styles.text, { color: theme.color }]}>
+          Hello, {name.firstName}
+        </Text>
 
         <View
           style={{
@@ -66,8 +72,10 @@ function Dashboard({ route }) {
               onPress={() => navigation.navigate("Add Food")}
               style={{ marginTop: 20 }}
             >
-              <Icon name="fast-food-outline" size={60} color={colours.black} />
-              <Text style={{ fontWeight: "bold", fontSize: 16 }}>Food</Text>
+              <Icon name="fast-food-outline" size={60} color={theme.color} />
+              <Text style={[styles.iconText, { color: theme.color }]}>
+                Food
+              </Text>
             </TouchableOpacity>
           </View>
 
@@ -76,8 +84,10 @@ function Dashboard({ route }) {
               onPress={() => navigation.navigate("Home")}
               style={{ marginTop: 20 }}
             >
-              <Icon name="fitness-outline" size={60} color={colours.black} />
-              <Text style={{ fontWeight: "bold", fontSize: 16 }}>Workout</Text>
+              <Icon name="fitness-outline" size={60} color={theme.color} />
+              <Text style={[styles.iconText, { color: theme.color }]}>
+                Workout
+              </Text>
             </TouchableOpacity>
           </View>
           <View style={{ flexDirection: "row" }}>
@@ -85,26 +95,29 @@ function Dashboard({ route }) {
               onPress={() => navigation.navigate("More")}
               style={{ marginTop: 20 }}
             >
-              <Icon name="ellipsis-horizontal-outline" size={60} />
-              <Text style={{ fontWeight: "bold", fontSize: 16 }}>More</Text>
+              <Icon
+                name="ellipsis-horizontal-outline"
+                size={60}
+                color={theme.color}
+              />
+              <Text style={[styles.iconText, { color: theme.color }]}>
+                More
+              </Text>
             </TouchableOpacity>
           </View>
         </View>
 
-        <View>
-          <TouchableOpacity
-            onPress={() => navigation.navigate("Modal")}
-            style={{ marginTop: 20 }}
-          >
-            <Text style={{ fontWeight: "bold", fontSize: 16 }}>Modal</Text>
-          </TouchableOpacity>
-        </View>
-
         <View style={{ marginTop: 40 }}>
-          <Text style={styles.subText}>Calories: </Text>
-          <Text style={styles.subText}>Protein: </Text>
-          <Text style={styles.subText}>Carbohydrates: </Text>
-          <Text style={styles.subText}>Fat: </Text>
+          <Text style={[styles.subText, { color: theme.color }]}>
+            Calories:{" "}
+          </Text>
+          <Text style={[styles.subText, { color: theme.color }]}>
+            Protein:{" "}
+          </Text>
+          <Text style={[styles.subText, { color: theme.color }]}>
+            Carbohydrates:{" "}
+          </Text>
+          <Text style={[styles.subText, { color: theme.color }]}>Fat: </Text>
         </View>
 
         <TouchableOpacity
@@ -185,8 +198,12 @@ const styles = StyleSheet.create({
   },
   subText: {
     fontSize: 16,
-    color: colours.black,
+
     marginLeft: 24,
     marginBottom: 16,
+  },
+  iconText: {
+    fontWeight: "bold",
+    fontSize: 16,
   },
 });

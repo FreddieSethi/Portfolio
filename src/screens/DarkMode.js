@@ -1,13 +1,20 @@
 import { View, Text, StyleSheet, Switch } from "react-native";
-import React, { useState, useContext } from "react";
-//import { Switch } from "react-native-gesture-handler";
+import React, { useState, useContext, useEffect } from "react";
 import { EventRegister } from "react-native-event-listeners";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import themeContext from "../config/themeContext";
 
 const DarkMode = () => {
   const theme = useContext(themeContext);
   const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    AsyncStorage.getItem("darkMode").then((value) => {
+      setDarkMode(JSON.parse(value));
+    });
+  }, []);
+
   return (
     <View
       style={[styles.container, { backgroundColor: theme.backgroundColor }]}
