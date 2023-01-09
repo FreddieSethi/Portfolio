@@ -54,53 +54,53 @@ function PaceCalculator() {
     >
       <Text style={[styles.buttonText, { color: theme.color }]}>Time:</Text>
       <TextInput
-        style={[styles.input, { color: theme.color }]}
+        style={[styles.input, { borderColor: theme.color }]}
         placeholder="Hours"
         keyboardType="numeric"
         onChangeText={(text) => setHours(text)}
-        placeholderTextColor={colours.placholder}
+        placeholderTextColor={theme.color}
       />
 
       <TextInput
-        style={[styles.input, { color: theme.color }]}
+        style={[styles.input, { borderColor: theme.color }]}
         keyboardType="numeric"
         onChangeText={(text) => setMinutes(text)}
         placeholder="Minutes"
-        placeholderTextColor={colours.placholder}
+        placeholderTextColor={theme.color}
       />
 
       <TextInput
-        style={[styles.input, { color: theme.color }]}
+        style={[styles.input, { borderColor: theme.color }]}
         keyboardType="numeric"
         onChangeText={(text) => setSeconds(text)}
         placeholder="Seconds"
-        placeholderTextColor={colours.placholder}
+        placeholderTextColor={theme.color}
       />
 
       <Text style={[styles.buttonText, { color: theme.color }]}>Distance:</Text>
       <TextInput
-        style={[styles.input, { color: theme.color }]}
+        style={[styles.input, { borderColor: theme.color }]}
         placeholder="Distance"
         keyboardType="numeric"
         onChangeText={(text) => setDistance(text)}
-        placeholderTextColor={colours.placholder}
+        placeholderTextColor={theme.color}
       />
       <Text style={[styles.buttonText, { color: theme.color }]}>Unit:</Text>
 
       <TouchableOpacity style={[styles.result, { color: theme.color }]}>
         <Picker
-          style={{ color: "#fff", placeholderTextColor: "#fff" }}
+          style={{ color: theme.color, placeholderTextColor: theme.color }}
           selectedValue={unit}
           onValueChange={(itemValue) => setUnit(itemValue)}
         >
-          <Picker.Item style={styles.picker} label="Kilometers" value="km" />
+          <Picker.Item style={theme.color} label="Kilometers" value="km" />
           <Picker.Item label="Miles" value="miles" />
           <Picker.Item label="Meters" value="meters" />
         </Picker>
       </TouchableOpacity>
 
       <TouchableOpacity
-        style={[styles.button, { color: theme.color }]}
+        style={[styles.button, { borderColor: theme.color }]}
         onPress={calculatePace}
       >
         <Text style={[styles.buttonText, { color: theme.color }]}>
@@ -132,7 +132,6 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     fontSize: 18,
     borderColor: colours.border,
-    placeholderTextColor: colours.placholder,
   },
   button: {
     height: 45,

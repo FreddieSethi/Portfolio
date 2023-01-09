@@ -6,10 +6,13 @@ import {
   StyleSheet,
   ScrollView,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { firebase } from "../config/firebase";
+import colours from "../config/colours";
+import themeContext from "../config/themeContext";
 
 const Registration = () => {
+  const theme = useContext(themeContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -53,11 +56,9 @@ const Registration = () => {
   };
   return (
     <ScrollView>
-      <View style={styles.container}>
-        <Text style={{ fontWeight: "bold", fontSize: 23 }}>
-          Register Here!!
-        </Text>
-
+      <View
+        style={[styles.container, { backgroundColor: theme.backgroundColor }]}
+      >
         <View style={{ marginTop: 40 }}>
           <TextInput
             style={styles.textInput}
@@ -108,22 +109,26 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    marginTop: 100,
+    marginTop: 40,
   },
+
   textInput: {
     paddingTop: 20,
     paddingBottom: 20,
-    width: 400,
+    width: 300,
     fontSize: 20,
-    borderBottomColor: "#000",
-    marginBottom: 10,
+    borderColor: colours.black,
+    borderWidth: 1,
+    borderStyle: "solid",
+    marginBottom: 15,
     textAlign: "center",
+    borderRadius: 10,
   },
   button: {
     marginTop: 50,
     height: 70,
     width: 250,
-    backgroundColor: "#026efd",
+    backgroundColor: colours.lightBlue,
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 50,

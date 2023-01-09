@@ -43,24 +43,24 @@ const WaistToHipCalculator = () => {
       style={[styles.container, { backgroundColor: theme.backgroundColor }]}
     >
       <TextInput
-        style={[styles.input, { color: theme.color }]}
+        style={[styles.input, { borderColor: theme.color }]}
         placeholder="Waist (inches)"
         keyboardType="numeric"
         value={waist}
         onChangeText={(waist) => setWaist(waist)}
-        placeholderTextColor={colours.placholder}
+        placeholderTextColor={theme.color}
       />
       <TextInput
-        style={[styles.input, { color: theme.color }]}
+        style={[styles.input, { borderColor: theme.color }]}
         placeholder="Hip (inches)"
         keyboardType="numeric"
         value={hip}
         onChangeText={(hip) => setHip(hip)}
-        placeholderTextColor={colours.placholder}
+        placeholderTextColor={theme.color}
       />
 
       <TouchableOpacity
-        style={[styles.button, { color: theme.color }]}
+        style={[styles.button, { borderColor: theme.color }]}
         onPress={calculateRatio}
       >
         <Text style={[styles.buttonText, { color: theme.color }]}>
@@ -76,7 +76,7 @@ const WaistToHipCalculator = () => {
         )}
       </View>
       <View>
-        <Table borderStyle={{ borderWidth: 2, borderColor: "#c8e1ff" }}>
+        <Table borderStyle={{ borderWidth: 2, borderColor: theme.color }}>
           <Row
             data={tableHead}
             style={[styles.head, { color: theme.color }]}
@@ -131,8 +131,9 @@ const styles = StyleSheet.create({
     margin: 15,
   },
   result: {
-    fontSize: 30,
+    fontSize: 26,
     fontWeight: "bold",
+    marginBottom: 20,
   },
   head: { height: 40, backgroundColor: "#f1f8ff" },
   text: { margin: 6 },

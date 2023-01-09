@@ -181,6 +181,7 @@ const styles = StyleSheet.create({
     marginLeft: 32,
     marginBottom: 10,
     color: colours.black,
+    fontWeight: "bold",
   },
   subText: {
     fontSize: 16,

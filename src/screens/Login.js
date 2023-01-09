@@ -110,11 +110,9 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
     width: 300,
     fontSize: 20,
-
     borderColor: colours.black,
     borderWidth: 1,
     borderStyle: "solid",
-
     marginBottom: 15,
     textAlign: "center",
     borderRadius: 10,

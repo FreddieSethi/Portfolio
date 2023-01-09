@@ -6,7 +6,6 @@ import {
   Text,
   StyleSheet,
   TextInput,
-  Button,
   TouchableOpacity,
   ScrollView,
 } from "react-native";
@@ -53,24 +52,27 @@ const BmiCalc = () => {
       keyboardShouldPersistTaps="handled"
       style={[styles.container, { backgroundColor: theme.backgroundColor }]}
     >
-      <TextInput
-        style={[styles.input, { color: theme.color }]}
-        value={weight}
-        onChangeText={(text) => setWeight(text)}
-        placeholder="Weight in KG" // Placeholder text to display when the input is empty
-        placeholderTextColor={colours.placholder}
-        keyboardType="numeric" // Display a numeric keyboard
-      />
-      <TextInput
-        style={[styles.input, { color: theme.color }]}
-        value={height}
-        onChangeText={(text) => setHeight(text)}
-        placeholder="Height in cm"
-        placeholderTextColor={colours.placholder}
-        keyboardType="numeric"
-      />
+      <View>
+        <TextInput
+          style={[styles.input, { borderColor: theme.color }]}
+          value={weight}
+          onChangeText={(text) => setWeight(text)}
+          placeholder="Weight in KG" // Placeholder text to display when the input is empty
+          placeholderTextColor={theme.color}
+          keyboardType="numeric" // Display a numeric keyboard
+        />
+        <TextInput
+          style={[styles.input, { borderColor: theme.color }]}
+          value={height}
+          onChangeText={(text) => setHeight(text)}
+          placeholder="Height in cm"
+          placeholderTextColor={theme.color}
+          keyboardType="numeric"
+        />
+      </View>
+
       <TouchableOpacity
-        style={[styles.button, { color: theme.color }]}
+        style={[styles.button, { borderColor: theme.color }]}
         onPress={calcBmi}
       >
         <Text style={[styles.buttonText, { color: theme.color }]}>
@@ -84,7 +86,7 @@ const BmiCalc = () => {
         </Text>
       </View>
       <View>
-        <Table borderStyle={{ borderWidth: 2, borderColor: "#c8e1ff" }}>
+        <Table borderStyle={{ borderWidth: 2, borderColor: theme.color }}>
           <Rows data={data} textStyle={[styles.text, { color: theme.color }]} />
         </Table>
       </View>
@@ -100,18 +102,20 @@ const styles = StyleSheet.create({
     //paddingTop: Constants.statusBarHeight,
     paddingTop: 20,
   },
-  title: {
-    height: 80,
-    justifyContent: "center",
-    alignItems: "center",
-    marginBottom: 10,
-  },
-  titleText: {
-    fontSize: 30,
-    fontWeight: "bold",
+  textInput: {
+    paddingTop: 20,
+    paddingBottom: 20,
+    width: 300,
+    fontSize: 20,
+    borderWidth: 1,
+    borderStyle: "solid",
+    marginBottom: 15,
+    textAlign: "center",
+    borderRadius: 10,
+    borderWidth: 2,
   },
   input: {
-    height: 55,
+    height: 45,
     margin: 15,
     borderWidth: 1 / 2,
     padding: 10,
@@ -122,11 +126,10 @@ const styles = StyleSheet.create({
   button: {
     height: 55,
     margin: 15,
-    borderWidth: 1 / 2,
+    borderWidth: 2,
     borderRadius: 5,
     justifyContent: "center",
     alignItems: "center",
-    borderColor: colours.border,
   },
   buttonText: {
     fontSize: 20,
@@ -139,7 +142,4 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: "bold",
   },
-  head: { height: 40, backgroundColor: "#f1f8ff" },
-  text: { margin: 6 },
-  row: { flexDirection: "row", backgroundColor: "#FFF1C1" },
 });

@@ -1,19 +1,29 @@
-import React from "react";
-import { View, Text } from "react-native";
+import React, { useContext } from "react";
+import { View, Text, StyleSheet } from "react-native";
 import Meal from "./Meal";
+import themeContext from "../config/themeContext";
 
 export default function MealList({ mealData }) {
+  const theme = useContext(themeContext);
   const nutrients = mealData.nutrients;
 
   return (
     <View>
       <View>
-        <Text>Macros</Text>
+        <Text style={[styles.title, { color: theme.color }]}>Macros</Text>
         <View>
-          <Text>Calories: {nutrients.calories.toFixed(0)}</Text>
-          <Text>Carbohydrates: {nutrients.carbohydrates.toFixed(0)}</Text>
-          <Text>Fat: {nutrients.fat.toFixed(0)}</Text>
-          <Text>Protein: {nutrients.protein.toFixed(0)}</Text>
+          <Text style={[styles.text, { color: theme.color }]}>
+            Calories: {nutrients.calories.toFixed(0)} grams
+          </Text>
+          <Text style={[styles.text, { color: theme.color }]}>
+            Carbohydrates: {nutrients.carbohydrates.toFixed(0)} grams
+          </Text>
+          <Text style={[styles.text, { color: theme.color }]}>
+            Fat: {nutrients.fat.toFixed(0)} grams
+          </Text>
+          <Text style={[styles.text, { color: theme.color }]}>
+            Protein: {nutrients.protein.toFixed(0)} grams
+          </Text>
         </View>
       </View>
 
@@ -25,3 +35,15 @@ export default function MealList({ mealData }) {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  title: {
+    fontWeight: "bold",
+    fontSize: 20,
+    marginBottom: 10,
+  },
+  text: {
+    fontSize: 20,
+    marginBottom: 10,
+  },
+});

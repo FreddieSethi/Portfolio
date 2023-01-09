@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   View,
   TextInput,
@@ -14,6 +14,7 @@ import theme from "../config/theme";
 import colours from "../config/colours";
 
 function App() {
+  const theme = useContext(themeContext);
   const [mealData, setMealData] = useState(null);
   const [calories, setCalories] = useState(2000);
 
@@ -45,8 +46,8 @@ function App() {
           keyboardType="numeric"
           placeholder="Calories (e.g. 2000)"
           onChangeText={(text) => setCalories(text)}
-          style={[styles.input, { color: theme.color }]}
-          placeholderTextColor={"#FFCCCB"}
+          style={[styles.input, { borderColor: theme.color }]}
+          placeholderTextColor={theme.color}
         />
 
         <TouchableOpacity onPress={getMealData} style={styles.button}>

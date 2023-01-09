@@ -2,9 +2,12 @@ import React, { useState, useEffect } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import colours from "../config/colours";
+import themeContext from "../config/themeContext";
+import { color } from "react-native-elements/dist/helpers";
 
 export default function App() {
   let KEY = "1c33a2c342d2362b76d7c3b3b24e3ae9";
+  const theme = useContext(themeContext);
   const [temperature, setTemperature] = useState("");
   const [condition, setCondition] = useState("");
   function fetchWeather(lat, lon) {
@@ -31,10 +34,10 @@ export default function App() {
 
   return (
     <View>
-      <Text style={styles.bigText}>
+      <Text style={[styles.bigText, { color: theme.color }]}>
         {temperature} {"\u00B0"} C
       </Text>
-      <Text style={styles.bigText}>{condition}</Text>
+      <Text style={[styles.bigText, { color: theme.color }]}>{condition}</Text>
       <StatusBar style="auto" />
     </View>
   );

@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { View, Text, Image } from "react-native";
+import React, { useState, useEffect, useContext } from "react";
+import { View, Text, Image, StyleSheet } from "react-native";
+import themeContext from "../config/themeContext";
 
 export default function Meal({ meal }) {
+  const theme = useContext(themeContext);
   const [imageUrl, setImageUrl] = useState("");
 
   let apiKey = "4cd90a9367d54d1d9c12324a662c5590";
@@ -24,11 +26,27 @@ export default function Meal({ meal }) {
       <Text>{meal.title}</Text>
       <Image source={{ uri: imageUrl }} />
       <View>
-        <Text>Preparation time: {meal.readyInMinutes} minutes</Text>
-        <Text>Number of servings: {meal.servings}</Text>
+        <Text style={[styles.text, { color: theme.color }]}>
+          Preparation time: {meal.readyInMinutes} minutes
+        </Text>
+        <Text style={[styles.text, { color: theme.color }]}>
+          Number of servings: {meal.servings}
+        </Text>
       </View>
 
       {/* Links are not supported in React Native, so you will need to find an alternative way to display the recipe source */}
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  title: {
+    fontWeight: "bold",
+    fontSize: 20,
+    marginBottom: 10,
+  },
+  text: {
+    fontSize: 12,
+    marginBottom: 10,
+  },
+});
