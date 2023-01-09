@@ -5,26 +5,24 @@ import {
   ScrollView,
   StyleSheet,
 } from "react-native";
-import React from "react";
-
+import React, { useState, useContext } from "react";
 import { useNavigation } from "@react-navigation/native";
-
 import Icon from "react-native-vector-icons/Ionicons";
 import colours from "../config/colours";
+import themeContext from "../config/themeContext";
 
 const Dashboard = () => {
+  const theme = useContext(themeContext);
   const navigation = useNavigation();
 
   return (
     <ScrollView>
       <View>
-        <View style={styles.profile}>
+        <View
+          style={[styles.profile, { backgroundColor: theme.backgroundColor }]}
+        >
           <TouchableOpacity onPress={() => navigation.navigate("Registration")}>
-            <Icon
-              name="person-circle-outline"
-              size={100}
-              color={colours.black}
-            />
+            <Icon name="person-circle-outline" size={100} color={theme.color} />
           </TouchableOpacity>
         </View>
         <View
@@ -39,7 +37,9 @@ const Dashboard = () => {
               onPress={() => navigation.navigate("BMI")}
               style={styles.button}
             >
-              <Text style={{ fontWeight: "bold", fontSize: 16 }}>BMI</Text>
+              <Text style={[styles.calcButtons, { color: theme.color }]}>
+                BMI
+              </Text>
             </TouchableOpacity>
           </View>
 
@@ -48,7 +48,9 @@ const Dashboard = () => {
               onPress={() => navigation.navigate("Pace")}
               style={styles.button}
             >
-              <Text style={{ fontWeight: "bold", fontSize: 16 }}>Pace</Text>
+              <Text style={[styles.calcButtons, { color: theme.color }]}>
+                Pace
+              </Text>
             </TouchableOpacity>
           </View>
           <View style={{ flexDirection: "row" }}>
@@ -56,7 +58,9 @@ const Dashboard = () => {
               onPress={() => navigation.navigate("Waist to Hip Calculator")}
               style={styles.button}
             >
-              <Text style={{ fontWeight: "bold", fontSize: 16 }}>WTH</Text>
+              <Text style={[styles.calcButtons, { color: theme.color }]}>
+                WTH
+              </Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -73,8 +77,8 @@ const Dashboard = () => {
               onPress={() => navigation.navigate("Gyms Nearby")}
               style={{ marginTop: 20 }}
             >
-              <Icon name="pin-outline" size={60} color={colours.black} />
-              <Text style={{ fontWeight: "bold", fontSize: 16 }}>
+              <Icon name="pin-outline" size={60} color={theme.color} />
+              <Text style={[styles.calcButtons, { color: theme.color }]}>
                 Gyms Nearby
               </Text>
             </TouchableOpacity>
@@ -85,8 +89,8 @@ const Dashboard = () => {
               onPress={() => navigation.navigate("Meal Planner")}
               style={{ marginTop: 20 }}
             >
-              <Icon name="pizza-outline" size={60} color={colours.black} />
-              <Text style={{ fontWeight: "bold", fontSize: 16 }}>
+              <Icon name="pizza-outline" size={60} color={theme.color} />
+              <Text style={[styles.calcButtons, { color: theme.color }]}>
                 Meal Planner
               </Text>
             </TouchableOpacity>
@@ -96,8 +100,10 @@ const Dashboard = () => {
               onPress={() => navigation.navigate("Newsfeed")}
               style={{ marginTop: 20 }}
             >
-              <Icon name="newspaper-outline" size={60} color={colours.black} />
-              <Text style={{ fontWeight: "bold", fontSize: 16 }}>Newsfeed</Text>
+              <Icon name="newspaper-outline" size={60} color={theme.color} />
+              <Text style={[styles.calcButtons, { color: theme.color }]}>
+                Newsfeed
+              </Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -114,8 +120,8 @@ const Dashboard = () => {
               onPress={() => navigation.navigate("Reminders")}
               style={{ marginTop: 20 }}
             >
-              <Icon name="list-outline" size={60} color={colours.black} />
-              <Text style={{ fontWeight: "bold", fontSize: 16 }}>
+              <Icon name="list-outline" size={60} color={theme.color} />
+              <Text style={[styles.calcButtons, { color: theme.color }]}>
                 Reminders
               </Text>
             </TouchableOpacity>
@@ -126,8 +132,8 @@ const Dashboard = () => {
               onPress={() => navigation.navigate("Dark Mode")}
               style={{ marginTop: 20 }}
             >
-              <Icon name="moon-outline" size={60} color={colours.black} />
-              <Text style={{ fontWeight: "bold", fontSize: 16 }}>
+              <Icon name="moon-outline" size={60} color={theme.color} />
+              <Text style={[styles.calcButtons, { color: theme.color }]}>
                 Dark Mode
               </Text>
             </TouchableOpacity>
@@ -137,12 +143,8 @@ const Dashboard = () => {
               onPress={() => navigation.navigate("Authentication")}
               style={{ marginTop: 20 }}
             >
-              <Icon
-                name="finger-print-outline"
-                size={60}
-                color={colours.black}
-              />
-              <Text style={{ fontWeight: "bold", fontSize: 16 }}>
+              <Icon name="finger-print-outline" size={60} color={theme.color} />
+              <Text style={[styles.calcButtons, { color: theme.color }]}>
                 Authentication
               </Text>
             </TouchableOpacity>
@@ -170,5 +172,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 50,
+  },
+  calcButtons: {
+    fontWeight: "bold",
+    fontSize: 16,
   },
 });

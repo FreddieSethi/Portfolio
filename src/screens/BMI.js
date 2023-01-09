@@ -10,13 +10,9 @@ import {
   TouchableOpacity,
   ScrollView,
 } from "react-native";
-
 import React, { useState, useContext } from "react";
-import { Constants } from "expo-constants";
-
 import themeContext from "../config/themeContext";
 import colours from "../config/colours";
-
 import { Table, Rows } from "react-native-table-component";
 
 // Calculate the BMI and set the value in the state
