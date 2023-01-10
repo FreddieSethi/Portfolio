@@ -5,7 +5,7 @@ import { AntDesign } from "@expo/vector-icons";
 import colours from "../config/colours";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
-//this is a functional component that renders a nice looking input box
+//this is a functional component that renders a looking input box
 function AppTextInput({ icon, onSubmitEditing, ...otherProps }) {
   return (
     <View style={styles.inputSection}>

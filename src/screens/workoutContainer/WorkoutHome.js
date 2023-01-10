@@ -1,3 +1,5 @@
+import { Touchable } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 import { firebase } from "../../config/firebase";
 
 import {
@@ -7,7 +9,7 @@ import {
   ActivityIndicator,
   useEffect,
   useState,
-  WorkoutCardWithPressMenu,
+  Workout,
   getFormData,
   WorkoutTabs,
   StyleSheet,
@@ -42,27 +44,25 @@ const WorkoutHome = () => {
 
   if (dataLoaded) {
     return (
-      <>
-        <View style={styles.home}>
-          <ScrollView>
-            <Text style={styles.subText}>
-              What are we hitting today {name.firstName}?
-            </Text>
+      <View style={styles.home}>
+        <ScrollView>
+          <Text style={styles.subText}>
+            What are we hitting today {name.firstName}?
+          </Text>
 
-            <WorkoutTabs setWorkouts={setWorkouts} />
+          <WorkoutTabs setWorkouts={setWorkouts} />
 
-            {workouts.map((workout) => {
-              return (
-                <WorkoutCardWithPressMenu
-                  key={workout.key}
-                  workout={workout}
-                  SetItemChange={SetItemChange}
-                />
-              );
-            })}
-          </ScrollView>
-        </View>
-      </>
+          {workouts.map((workout) => {
+            return (
+              <TouchableOpacity
+                key={workout.key}
+                workout={workout}
+                SetItemChange={SetItemChange}
+              />
+            );
+          })}
+        </ScrollView>
+      </View>
     );
   } else {
     return (
@@ -96,7 +96,6 @@ export default WorkoutHome;
 
 export function setDataFromDB(setWorkouts) {
   const data = getFormData();
-  // The time out is for the data to load
   setTimeout(async function () {
     let actualData = data["_z"];
     const workoutObjectsArray = createWorkoutObjects(actualData);

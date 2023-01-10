@@ -1,7 +1,8 @@
-import { TextInput, View, StyleSheet, Text, Pressable } from "react-native";
+import { TextInput, View, StyleSheet, Text } from "react-native";
 import { useState } from "react";
 import SetsAddSection from "./SetsAddSection";
 import colours from "../../config/colours";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const Workout = ({
   index: workoutIndex,
@@ -48,7 +49,7 @@ const Workout = ({
             />
           );
         })}
-        <Pressable
+        <TouchableOpacity
           style={styles.button}
           onPress={() => {
             setSets((sets) => {
@@ -59,7 +60,7 @@ const Workout = ({
           }}
         >
           <Text style={styles.buttonText}>Add Set</Text>
-        </Pressable>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -95,7 +96,6 @@ const styles = StyleSheet.create({
   title: {
     color: colours.black,
     fontWeight: "bold",
-
     fontSize: 22,
   },
   titleContainer: {
@@ -109,7 +109,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
   },
-
   button: {
     alignItems: "center",
     justifyContent: "center",

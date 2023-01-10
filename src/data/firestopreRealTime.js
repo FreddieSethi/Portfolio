@@ -10,20 +10,6 @@ import {
   set,
 } from "firebase/database";
 
-// TODO: Replace the following with your app's Firebase project configuration
-// See: https://firebase.google.com/docs/web/learn-more#config-object
-// const firebaseConfig = {
-//   // ...
-//   // The value of `databaseURL` depends on the location of the database
-//   databaseURL: "https://test-93783-default-rtdb.firebaseio.com/",
-// };
-
-// Initialize Firebase
-//export const app = initializeApp(firebaseConfig);
-
-// Initialize Realtime Database and get a reference to the service
-// const database = getDatabase(app);
-
 function writeTemplateData(formInfo) {
   const db = getDatabase();
   const reference = ref(db, "users/");

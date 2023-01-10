@@ -74,7 +74,6 @@ function getWorkoutDaysFormatted(setMarkedDates, setLoaded) {
     workoutDays.forEach((date) => {
       formattedData[date] = {
         selected: true,
-        // marked: true,
         selectedColor: "rgb(0, 200, 254)",
       };
     });

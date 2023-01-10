@@ -1,12 +1,6 @@
-import {
-  StyleSheet,
-  View,
-  Text,
-  Platform,
-  Button,
-  Pressable,
-} from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 import React from "react";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 export default function EndFormButtons({ handleSubmit, setWorkoutsNum }) {
   const addField = () => {
@@ -19,19 +13,12 @@ export default function EndFormButtons({ handleSubmit, setWorkoutsNum }) {
   };
   return (
     <View style={styles.container}>
-      <>
-        <Button onPress={addField} title="Add Exercise" />
-        <Button style={styles.button} onPress={handleSubmit} title="Submit" />
-      </>
-
-      <>
-        <Pressable style={styles.button} onPress={addField}>
-          <Text style={styles.buttonText}>Add</Text>
-        </Pressable>
-        <Pressable style={styles.button} onPress={handleSubmit}>
-          <Text style={styles.buttonText}>Submit</Text>
-        </Pressable>
-      </>
+      <TouchableOpacity style={styles.button} onPress={addField}>
+        <Text style={styles.buttonText}>Add</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.button} onPress={handleSubmit}>
+        <Text style={styles.buttonText}>Submit</Text>
+      </TouchableOpacity>
     </View>
   );
 }

@@ -11,7 +11,6 @@ import {
 } from "react-native";
 import axios from "axios";
 import WeatherComponent from "../components/WeatherComponent";
-//import { Linking } from "react-native";
 
 const NewsList = () => {
   const [articles, setArticles] = useState([]);

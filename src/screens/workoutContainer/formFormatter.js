@@ -1,6 +1,6 @@
 const data = {
-  templateName: "Back day",
-  exercise0: "First E",
+  templateName: "Leg day",
+  exercise0: "First",
   exercise1: "Second",
   exercise2: "Third",
 

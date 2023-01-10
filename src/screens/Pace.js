@@ -121,7 +121,6 @@ export default PaceCalculator;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    //paddingTop: Constants.statusBarHeight,
     paddingTop: 20,
   },
   input: {

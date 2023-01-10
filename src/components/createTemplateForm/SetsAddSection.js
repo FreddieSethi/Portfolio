@@ -44,7 +44,6 @@ export default function SetsAddSection({
             return <Text>{data}</Text>;
           }}
           onValueChange={(data, selectedIndex) => {
-            // handleChange(`reps Workout: ${workoutIndex}, S: ${setIndex}`);
             setFieldValue(
               `reps Workout: ${workoutIndex}, S: ${setIndex}`,
               data
@@ -53,7 +52,6 @@ export default function SetsAddSection({
           wrapperHeight={91}
           wrapperWidth={10}
           wrapperColor="#FFFFFF"
-          // itemHeight={60}
           highlightColor="#d8d8d8"
           highlightBorderWidth={2}
         />
