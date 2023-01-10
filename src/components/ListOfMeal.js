@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from "react-native";
 import Meal from "./Meal";
 import themeContext from "../config/themeContext";
 
-export default function MealList({ mealData }) {
+export default function ListOfMeal({ mealData }) {
   const theme = useContext(themeContext);
   const nutrients = mealData.nutrients;
 

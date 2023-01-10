@@ -4,36 +4,41 @@ import {
   DefaultTheme,
 } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import React, { useState, useEffect } from "react";
-import { firebase } from "./config/firebase";
-import { StyleSheet } from "react-native";
-import { EventRegister } from "react-native-event-listeners";
-import colours from "./config/colours";
-import Login from "./screens/Login";
-import Registration from "./screens/Registration";
-import Dashboard from "./screens/Dashboard";
-import Header from "./components/Header";
-import BMI from "./screens/BMI";
-import AddFood from "./screens/AddFood";
-import Camera from "./screens/Camera";
-import More from "./screens/More";
-import Pace from "./screens/Pace";
-import WaistToHip from "./screens/WaistToHip";
-import GymsNearby from "./screens/GymsNearby";
-import MealPlanner from "./screens/MealPlanner";
-import Newsfeed from "./screens/Newsfeed";
-import DarkMode from "./screens/DarkMode";
-import StopWatch from "./components/shared/StopWatch";
-import Authentication from "./screens/Authentication";
-import CreateTemplateScreen from "./screens/workoutContainer/CreateTemplateScreen";
-import HistoryScreen from "./screens/workoutContainer/HistoryScreen";
-import HomeScreen from "./screens/workoutContainer/HomeScreen";
-import TimerScreen from "./screens/workoutContainer/TimerScreen";
-import WorkoutScreen from "./screens/workoutContainer/WorkoutScreen";
-import EditMacros from "./screens/EditMacros";
 
-import ItemList from "./components/ItemList";
-import DetailsScreen from "./components/DetailsScreen";
+import { firebase } from "./config/firebase";
+
+import { EventRegister } from "react-native-event-listeners";
+
+import {
+  useEffect,
+  useState,
+  StyleSheet,
+  colours,
+  Login,
+  Registration,
+  Dashboard,
+  Header,
+  BMI,
+  AddFood,
+  Camera,
+  More,
+  Pace,
+  WaistToHip,
+  GymsNearby,
+  MealPlanner,
+  Newsfeed,
+  DarkMode,
+  StopWatch,
+  Authentication,
+  CreateTemplateScreen,
+  HistoryScreen,
+  HomeScreen,
+  TimerScreen,
+  WorkoutScreen,
+  EditMacros,
+  ItemList,
+  DetailsScreen,
+} from "./routes";
 
 import themeContext from "./config/themeContext";
 import theme from "./config/theme";

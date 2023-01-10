@@ -8,7 +8,6 @@ import {
 import React, { useState, useEffect, useContext } from "react";
 import { firebase } from "../config/firebase";
 import { useNavigation } from "@react-navigation/native";
-//import Icon from "react-native-vector-icons/MaterialIcons";
 import colours from "../config/colours";
 import { ScrollView } from "react-native-gesture-handler";
 import Icon from "react-native-vector-icons/Ionicons";

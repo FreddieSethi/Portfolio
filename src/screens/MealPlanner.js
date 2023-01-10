@@ -7,10 +7,9 @@ import {
   TouchableOpacity,
   Text,
 } from "react-native";
-import MealList from "./MealList";
+import ListOfMeal from "../components/ListOfMeal";
 
 import themeContext from "../config/themeContext";
-import theme from "../config/theme";
 import colours from "../config/colours";
 
 function App() {
@@ -56,7 +55,7 @@ function App() {
           </Text>
         </TouchableOpacity>
       </View>
-      {mealData && <MealList mealData={mealData} />}
+      {mealData && <ListOfMeal mealData={mealData} />}
     </ScrollView>
   );
 }

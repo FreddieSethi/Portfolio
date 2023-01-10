@@ -1,3 +1,5 @@
+import { firebase } from "../../config/firebase";
+
 import {
   View,
   Text,
@@ -9,9 +11,8 @@ import {
   getFormData,
   Boxes,
   StyleSheet,
-} from "../../components/home/homeBarrel";
-import colours from "../../config/colours";
-import { firebase } from "../../config/firebase";
+  colours,
+} from "../../routes";
 
 const HomeScreen = () => {
   const [name, setName] = useState("");

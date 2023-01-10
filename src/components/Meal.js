@@ -23,7 +23,7 @@ export default function Meal({ meal }) {
 
   return (
     <View>
-      <Text>{meal.title}</Text>
+      <Text style={[styles.title, { color: theme.color }]}>{meal.title}</Text>
       <Image source={{ uri: imageUrl }} />
       <View>
         <Text style={[styles.text, { color: theme.color }]}>
