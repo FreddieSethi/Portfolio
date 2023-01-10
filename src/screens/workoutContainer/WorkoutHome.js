@@ -1,5 +1,3 @@
-import { Touchable } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
 import { firebase } from "../../config/firebase";
 
 import {
@@ -9,22 +7,22 @@ import {
   ActivityIndicator,
   useEffect,
   useState,
-  Workout,
   getFormData,
   WorkoutTabs,
   StyleSheet,
   colours,
+  WorkoutProgram,
 } from "../../routes";
 
 const WorkoutHome = () => {
   const [name, setName] = useState("");
   const [workouts, setWorkouts] = useState([]);
   const [itemChange, SetItemChange] = useState(false);
-  const [dataLoaded, setDataLoaded] = useState(false);
+  const [loadedData, setLoadedData] = useState(false);
 
   useEffect(() => {
     setDataFromDB(setWorkouts);
-    setDataLoaded(true);
+    setLoadedData(true);
   }, [itemChange]);
 
   useEffect(() => {
@@ -42,7 +40,7 @@ const WorkoutHome = () => {
       });
   }, []);
 
-  if (dataLoaded) {
+  if (loadedData) {
     return (
       <View style={styles.home}>
         <ScrollView>
@@ -54,7 +52,7 @@ const WorkoutHome = () => {
 
           {workouts.map((workout) => {
             return (
-              <TouchableOpacity
+              <WorkoutProgram
                 key={workout.key}
                 workout={workout}
                 SetItemChange={SetItemChange}
@@ -73,10 +71,12 @@ const WorkoutHome = () => {
   }
 };
 const styles = StyleSheet.create({
-  home: { flex: 1, backgroundColor: "white" },
+  home: {
+    flex: 1,
+    backgroundColor: "white",
+  },
   text: {
     fontSize: 30,
-
     marginLeft: 24,
     marginTop: 32,
     marginBottom: 16,
@@ -84,7 +84,6 @@ const styles = StyleSheet.create({
   },
   subText: {
     fontSize: 16,
-
     color: colours.black,
     marginLeft: 24,
     marginBottom: 16,
@@ -111,7 +110,6 @@ export function createWorkoutObjects(actualData) {
     workoutObject.exercises = actualData[index].exercises;
     workoutObject.lastPerformed = actualData[index].lastPerformed;
     workoutObject.key = actualData[index].key;
-
     workoutObjectsArray.push(workoutObject);
   }
   return workoutObjectsArray;

@@ -97,7 +97,7 @@ import React from "react";
 export default function WorkoutCardWithPressMenu() {
   return (
     <View>
-      <Text>WorkoutCardWithPressMenu</Text>
+      <Text>WorkoutProgram</Text>
     </View>
   );
 }

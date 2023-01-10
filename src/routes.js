@@ -37,7 +37,7 @@ import WorkoutHome from "./screens/workoutContainer/WorkoutHome";
 import EditMacros from "./screens/EditMacros";
 import ItemList from "./components/ItemList";
 import DetailsScreen from "./components/DetailsScreen";
-import WorkoutCardWithPressMenu from "./components/home/WorkoutCardWithPressMenu";
+import WorkoutProgram from "./components/home/WorkoutProgram";
 import { getFormData } from "./data/firestopreRealTime";
 import WorkoutTabs from "./components/home/WorkoutTabs";
 
@@ -49,7 +49,7 @@ export {
   useNavigation,
   useEffect,
   useState,
-  WorkoutCardWithPressMenu,
+  WorkoutProgram,
   getFormData,
   WorkoutTabs,
   StyleSheet,

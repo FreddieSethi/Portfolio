@@ -15,6 +15,7 @@ import { formatFormForFirebaseUpload } from "./formFormatter";
 import { useNavigation } from "@react-navigation/native";
 import { setDataFromDB } from "./WorkoutHome";
 import colours from "../../config/colours";
+import { WorkoutProgram } from "../../routes";
 
 const submitForm = (values, navigation, setWorkouts) => {
   const form = formatFormForFirebaseUpload(values);
@@ -68,15 +69,6 @@ const CreateTemplateScreen = ({ route }) => {
                 />
               );
             })}
-
-            <TouchableOpacity
-              handleSubmit={handleSubmit}
-              workoutsNum={workoutsNum}
-              setWorkoutsNum={setWorkoutsNum}
-              style={styles.button}
-            >
-              <Text style={{ fontSize: 18, fontWeight: "bold" }}>Submit</Text>
-            </TouchableOpacity>
 
             <EndFormButtons
               style={styles.button}

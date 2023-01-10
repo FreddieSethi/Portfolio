@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import themeContext from "../config/themeContext";
 
 export default function Meal({ meal }) {
@@ -24,7 +24,6 @@ export default function Meal({ meal }) {
   return (
     <View>
       <Text style={[styles.title, { color: theme.color }]}>{meal.title}</Text>
-      <Image source={{ uri: imageUrl }} />
       <View>
         <Text style={[styles.text, { color: theme.color }]}>
           Preparation time: {meal.readyInMinutes} minutes
@@ -33,8 +32,6 @@ export default function Meal({ meal }) {
           Number of servings: {meal.servings}
         </Text>
       </View>
-
-      {/* Links are not supported in React Native, so you will need to find an alternative way to display the recipe source */}
     </View>
   );
 }

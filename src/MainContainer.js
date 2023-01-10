@@ -69,7 +69,6 @@ function App() {
           options={{
             headerTitle: () => <Header name="Fitness Buddy" />,
             headerStyle: styles.headerStyle,
-            headerBackTitleVisible: false,
             headerTintColor: colours.black,
           }}
         />
@@ -119,18 +118,16 @@ function App() {
           headerTintColor: colours.black,
         }}
       />
-
       <Stack.Screen
         name="Home"
         component={WorkoutHome}
         options={{
-          headerTitle: () => <Header name="Home " />,
+          headerTitle: () => <Header name="Workout" />,
           headerStyle: styles.headerStyle,
           headerBackTitleVisible: false,
           headerTintColor: colours.black,
         }}
       />
-
       <Stack.Screen
         name="CreateTemplate"
         component={CreateTemplateScreen}
@@ -336,7 +333,6 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 50,
     borderBottomRightRadius: 50,
     backgroundColor: colours.lightBlue,
-
     shadowColor: colours.black,
     elevation: 25,
   },
