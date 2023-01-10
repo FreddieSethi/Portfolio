@@ -8,9 +8,9 @@ import {
 } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 
-import themeContext from "../config/themeContext";
-import colours from "../config/colours";
-import theme from "../config/theme";
+import themeContext from "../../config/themeContext";
+import colours from "../../config/colours";
+import theme from "../../config/theme";
 
 function PaceCalculator() {
   const theme = useContext(themeContext);

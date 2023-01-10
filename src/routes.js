@@ -14,23 +14,27 @@ import colours from "./config/colours";
 import themeContext from "./config/themeContext";
 import { Picker } from "@react-native-picker/picker";
 
+// components
+import Header from "./components/Header";
+
 // screens
 import Login from "./screens/Login";
 import Registration from "./screens/Registration";
+
 import Dashboard from "./screens/Dashboard";
-import Header from "./components/Header";
-import BMI from "./screens/BMI";
-import AddFood from "./screens/AddFood";
-import Camera from "./screens/Camera";
-import More from "./screens/More";
-import Pace from "./screens//Pace";
-import WaistToHip from "./screens/WaistToHip";
-import GymsNearby from "./screens/GymsNearby";
-import MealPlanner from "./screens/MealPlanner";
-import Newsfeed from "./screens/Newsfeed";
-import DarkMode from "./screens/DarkMode";
-import StopWatch from "./components/shared/StopWatch";
-import Authentication from "./screens/Authentication";
+import BMI from "./screens/moreContainer/BMI";
+
+import AddFood from "./screens/foodContainer/AddFood";
+import Camera from "./screens/foodContainer/Camera";
+
+import More from "./screens/moreContainer/More";
+import Pace from "./screens/moreContainer/Pace";
+import WaistToHip from "./screens/moreContainer/WaistToHip";
+import GymsNearby from "./screens/moreContainer/GymsNearby";
+import MealPlanner from "./screens/moreContainer/MealPlanner";
+import Newsfeed from "./screens/moreContainer/Newsfeed";
+import DarkMode from "./screens/moreContainer/DarkMode";
+import Authentication from "./screens/moreContainer/Authentication";
 import CreateTemplateScreen from "./screens/workoutContainer/CreateTemplateScreen";
 import HistoryScreen from "./screens/workoutContainer/HistoryScreen";
 import WorkoutHome from "./screens/workoutContainer/WorkoutHome";
@@ -68,7 +72,6 @@ export {
   MealPlanner,
   Newsfeed,
   DarkMode,
-  StopWatch,
   Authentication,
   CreateTemplateScreen,
   HistoryScreen,

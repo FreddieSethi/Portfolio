@@ -10,8 +10,8 @@ import {
   ScrollView,
 } from "react-native";
 import React, { useState, useContext } from "react";
-import themeContext from "../config/themeContext";
-import colours from "../config/colours";
+import themeContext from "../../config/themeContext";
+import colours from "../../config/colours";
 import { Table, Rows } from "react-native-table-component";
 
 // Calculate the BMI and set the value in the state

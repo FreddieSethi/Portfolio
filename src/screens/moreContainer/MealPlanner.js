@@ -7,10 +7,11 @@ import {
   TouchableOpacity,
   Text,
 } from "react-native";
-import ListOfMeal from "../components/ListOfMeal";
 
-import themeContext from "../config/themeContext";
-import colours from "../config/colours";
+import ListOfMeal from "../../components/ListOfMeal";
+
+import themeContext from "../../config/themeContext";
+import colours from "../../config/colours";
 
 function App() {
   const theme = useContext(themeContext);

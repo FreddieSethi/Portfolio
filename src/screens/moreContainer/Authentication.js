@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Switch } from "react-native";
 import { useEffect, useState, useContext } from "react";
 import * as LocalAuthentication from "expo-local-authentication";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import themeContext from "../config/themeContext";
+import themeContext from "../../config/themeContext";
 
 export default function App() {
   const theme = useContext(themeContext);

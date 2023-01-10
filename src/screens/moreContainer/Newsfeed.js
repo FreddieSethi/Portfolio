@@ -10,7 +10,7 @@ import {
   SafeAreaView,
 } from "react-native";
 import axios from "axios";
-import WeatherComponent from "../components/WeatherComponent";
+import WeatherComponent from "../../components/WeatherComponent";
 
 const NewsList = () => {
   const [articles, setArticles] = useState([]);

@@ -3,7 +3,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { EventRegister } from "react-native-event-listeners";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-import themeContext from "../config/themeContext";
+import themeContext from "../../config/themeContext";
 
 const DarkMode = () => {
   const theme = useContext(themeContext);

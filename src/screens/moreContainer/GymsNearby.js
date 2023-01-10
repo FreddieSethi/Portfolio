@@ -4,12 +4,10 @@ import { StyleSheet, View, Dimensions, Button } from "react-native";
 import * as Location from "expo-location";
 import { useNavigation } from "@react-navigation/native";
 
-import gymData from "../data/gymData.json";
+import gymData from "../../data/gymData.json";
 
-import themeContext from "../config/themeContext";
-import theme from "../config/theme";
-import colours from "../config/colours"; // used so can import colours, which is more maintainable -- better not to hard code colours
-import MarkerComponent from "../components/MarkerComponent";
+import colours from "../../config/colours"; // used so can import colours, which is more maintainable -- better not to hard code colours
+import MarkerComponent from "../../components/MarkerComponent";
 
 export default function App() {
   // fetching data

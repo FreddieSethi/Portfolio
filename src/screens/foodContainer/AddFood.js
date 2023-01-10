@@ -8,12 +8,12 @@ import {
 } from "react-native";
 import { useState, useContext } from "react";
 import { useNavigation } from "@react-navigation/native";
-import nutrientAPI from "../data/nutrientAPI.json";
+import nutrientAPI from "../../data/nutrientAPI.json";
 import Icon from "react-native-vector-icons/MaterialIcons";
-import colours from "../config/colours";
+import colours from "../../config/colours";
 import { TextInput } from "react-native-gesture-handler";
-import themeContext from "../config/themeContext";
-import theme from "../config/theme";
+import themeContext from "../../config/themeContext";
+import theme from "../../config/theme";
 
 const DATA = Object.values(nutrientAPI);
 console.log(DATA);

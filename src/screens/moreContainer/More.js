@@ -8,8 +8,8 @@ import {
 import React, { useContext } from "react";
 import { useNavigation } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/Ionicons";
-import colours from "../config/colours";
-import themeContext from "../config/themeContext";
+import colours from "../../config/colours";
+import themeContext from "../../config/themeContext";
 
 const Dashboard = () => {
   const theme = useContext(themeContext);

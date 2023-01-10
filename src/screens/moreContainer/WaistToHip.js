@@ -9,9 +9,8 @@ import {
   ScrollView,
 } from "react-native";
 
-import themeContext from "../config/themeContext";
-import theme from "../config/theme";
-import colours from "../config/colours";
+import themeContext from "../../config/themeContext";
+import colours from "../../config/colours";
 
 import { Table, Row, Rows } from "react-native-table-component";
 
