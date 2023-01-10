@@ -1,8 +1,12 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import colours from "../../config/colours";
+import Icon from "react-native-vector-icons/Ionicons";
+import themeContext from "../../config/themeContext";
+import React, { useContext } from "react";
 
 export default function Boxes({ setWorkouts }) {
+  const theme = useContext(themeContext);
   const navigation = useNavigation();
   return (
     <View style={styles.boxesContainer}>
@@ -10,11 +14,8 @@ export default function Boxes({ setWorkouts }) {
         style={{ alignItems: "center" }}
         onPress={() => navigation.navigate("CreateTemplate", { setWorkouts })}
       >
-        <View style={styles.heroBox}>
-          <Image
-            style={styles.icon}
-            source={require("../../../assets/icons/newFolder.png")}
-          ></Image>
+        <View>
+          <Icon name="folder-outline" size={100} color={theme.color} />
         </View>
         <Text style={styles.textStyles}>Create New</Text>
       </TouchableOpacity>
@@ -23,10 +24,7 @@ export default function Boxes({ setWorkouts }) {
         onPress={() => navigation.navigate("HistoryScreen")}
       >
         <View style={styles.heroBox}>
-          <Image
-            style={styles.icon}
-            source={require("../../../assets/icons/history.png")}
-          ></Image>
+          <Icon name="hourglass-outline" size={100} color={theme.color} />
         </View>
         <Text style={styles.textStyles}>History</Text>
       </TouchableOpacity>
@@ -40,17 +38,6 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     flexDirection: "row",
     justifyContent: "space-between",
-  },
-  heroBox: {
-    width: 65,
-    height: 65,
-    borderRadius: 15,
-    borderColor: colours.black,
-    borderWidth: 1,
-    marginBottom: 8,
-
-    justifyContent: "center",
-    alignItems: "center",
   },
   icon: { width: 32, height: 32 },
   textStyles: {},

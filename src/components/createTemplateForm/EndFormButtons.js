@@ -19,21 +19,19 @@ export default function EndFormButtons({ handleSubmit, setWorkoutsNum }) {
   };
   return (
     <View style={styles.container}>
-      {Platform.OS === "ios" ? (
-        <>
-          <Button onPress={addField} title="Add Exercise" />
-          <Button style={styles.button} onPress={handleSubmit} title="Submit" />
-        </>
-      ) : (
-        <>
-          <Pressable style={styles.button} onPress={addField}>
-            <Text style={styles.buttonText}>Add</Text>
-          </Pressable>
-          <Pressable style={styles.button} onPress={handleSubmit}>
-            <Text style={styles.buttonText}>Submit</Text>
-          </Pressable>
-        </>
-      )}
+      <>
+        <Button onPress={addField} title="Add Exercise" />
+        <Button style={styles.button} onPress={handleSubmit} title="Submit" />
+      </>
+
+      <>
+        <Pressable style={styles.button} onPress={addField}>
+          <Text style={styles.buttonText}>Add</Text>
+        </Pressable>
+        <Pressable style={styles.button} onPress={handleSubmit}>
+          <Text style={styles.buttonText}>Submit</Text>
+        </Pressable>
+      </>
     </View>
   );
 }

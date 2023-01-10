@@ -11,7 +11,7 @@ const Workout = ({
 }) => {
   const [sets, setSets] = useState(Array(1).fill(0));
   return (
-    <>
+    <View>
       <View style={styles.set}>
         <View style={styles.titleContainer}>
           <Text style={styles.title}>{`Exercise ${workoutIndex + 1}`}</Text>
@@ -61,7 +61,7 @@ const Workout = ({
           <Text style={styles.buttonText}>Add Set</Text>
         </Pressable>
       </View>
-    </>
+    </View>
   );
 };
 

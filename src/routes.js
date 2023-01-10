@@ -1,3 +1,4 @@
+// react native installs
 import {
   View,
   StyleSheet,
@@ -5,16 +6,15 @@ import {
   ScrollView,
   ActivityIndicator,
 } from "react-native";
-
 import { useNavigation } from "@react-navigation/native";
+import { useEffect, useState, useContext } from "react";
 
-import { useEffect, useState } from "react";
-import WorkoutCardWithPressMenu from "./components/home/WorkoutCardWithPressMenu";
-import { getFormData } from "./data/firestopreRealTime";
-import Boxes from "./components/home/Boxes";
-
+// config
 import colours from "./config/colours";
+import themeContext from "./config/themeContext";
+import { Picker } from "@react-native-picker/picker";
 
+// screens
 import Login from "./screens/Login";
 import Registration from "./screens/Registration";
 import Dashboard from "./screens/Dashboard";
@@ -23,7 +23,7 @@ import BMI from "./screens/BMI";
 import AddFood from "./screens/AddFood";
 import Camera from "./screens/Camera";
 import More from "./screens/More";
-import Pace from "./screens/Pace";
+import Pace from "./screens//Pace";
 import WaistToHip from "./screens/WaistToHip";
 import GymsNearby from "./screens/GymsNearby";
 import MealPlanner from "./screens/MealPlanner";
@@ -33,12 +33,13 @@ import StopWatch from "./components/shared/StopWatch";
 import Authentication from "./screens/Authentication";
 import CreateTemplateScreen from "./screens/workoutContainer/CreateTemplateScreen";
 import HistoryScreen from "./screens/workoutContainer/HistoryScreen";
-import HomeScreen from "./screens/workoutContainer/HomeScreen";
-import TimerScreen from "./screens/workoutContainer/TimerScreen";
-import WorkoutScreen from "./screens/workoutContainer/WorkoutScreen";
+import WorkoutHome from "./screens/workoutContainer/WorkoutHome";
 import EditMacros from "./screens/EditMacros";
 import ItemList from "./components/ItemList";
 import DetailsScreen from "./components/DetailsScreen";
+import WorkoutCardWithPressMenu from "./components/home/WorkoutCardWithPressMenu";
+import { getFormData } from "./data/firestopreRealTime";
+import WorkoutTabs from "./components/home/WorkoutTabs";
 
 export {
   View,
@@ -50,7 +51,7 @@ export {
   useState,
   WorkoutCardWithPressMenu,
   getFormData,
-  Boxes,
+  WorkoutTabs,
   StyleSheet,
   colours,
   Login,
@@ -71,10 +72,11 @@ export {
   Authentication,
   CreateTemplateScreen,
   HistoryScreen,
-  HomeScreen,
-  TimerScreen,
-  WorkoutScreen,
+  WorkoutHome,
   EditMacros,
   ItemList,
   DetailsScreen,
+  themeContext,
+  Picker,
+  useContext,
 };

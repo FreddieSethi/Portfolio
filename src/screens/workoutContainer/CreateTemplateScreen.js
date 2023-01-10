@@ -13,7 +13,7 @@ import EndFormButtons from "../../components/createTemplateForm/EndFormButtons";
 import { writeFormData } from "../../data/firestopreRealTime";
 import { formatFormForFirebaseUpload } from "./formFormatter";
 import { useNavigation } from "@react-navigation/native";
-import { setDataFromDB } from "./HomeScreen";
+import { setDataFromDB } from "./WorkoutHome";
 import colours from "../../config/colours";
 
 const submitForm = (values, navigation, setWorkouts) => {

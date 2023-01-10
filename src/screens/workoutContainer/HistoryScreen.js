@@ -11,14 +11,14 @@ import { getWorkoutDays } from "../../data/firestopreRealTime";
 
 const initialDate = getTodaysDate();
 
-const NewCalendarListScreen = () => {
+const NewCalendarScreen = () => {
   const [selected, setSelected] = useState(initialDate);
   const [isHorizontal, setIsHorizontal] = useState(false);
   const [markedDates, setMarkedDates] = useState({});
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    getFormattedWorkoutDays(setMarkedDates, setLoaded);
+    getWorkoutDaysFormatted(setMarkedDates, setLoaded);
   }, []);
   const onValueChange = useCallback(
     (value) => {
@@ -56,7 +56,7 @@ const NewCalendarListScreen = () => {
         <Switch value={isHorizontal} onValueChange={onValueChange} />
       </View>
       <NewCalendarList
-        key={Number(isHorizontal)} // only for this example - to force rerender
+        key={Number(isHorizontal)}
         horizontal={isHorizontal}
         staticHeader
         calendarProps={calendarProps}
@@ -65,9 +65,9 @@ const NewCalendarListScreen = () => {
   );
 };
 
-export default NewCalendarListScreen;
+export default NewCalendarScreen;
 
-function getFormattedWorkoutDays(setMarkedDates, setLoaded) {
+function getWorkoutDaysFormatted(setMarkedDates, setLoaded) {
   const workoutDays = getWorkoutDays();
   let formattedData = {};
   setTimeout(function () {

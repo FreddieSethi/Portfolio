@@ -9,12 +9,12 @@ import {
   useState,
   WorkoutCardWithPressMenu,
   getFormData,
-  Boxes,
+  WorkoutTabs,
   StyleSheet,
   colours,
 } from "../../routes";
 
-const HomeScreen = () => {
+const WorkoutHome = () => {
   const [name, setName] = useState("");
   const [workouts, setWorkouts] = useState([]);
   const [itemChange, SetItemChange] = useState(false);
@@ -49,7 +49,7 @@ const HomeScreen = () => {
               What are we hitting today {name.firstName}?
             </Text>
 
-            <Boxes setWorkouts={setWorkouts} />
+            <WorkoutTabs setWorkouts={setWorkouts} />
 
             {workouts.map((workout) => {
               return (
@@ -62,7 +62,6 @@ const HomeScreen = () => {
             })}
           </ScrollView>
         </View>
-        {/* <BottomBar /> */}
       </>
     );
   } else {
@@ -93,7 +92,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default WorkoutHome;
 
 export function setDataFromDB(setWorkouts) {
   const data = getFormData();

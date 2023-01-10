@@ -28,13 +28,10 @@ import {
   MealPlanner,
   Newsfeed,
   DarkMode,
-  StopWatch,
   Authentication,
   CreateTemplateScreen,
   HistoryScreen,
-  HomeScreen,
-  TimerScreen,
-  WorkoutScreen,
+  WorkoutHome,
   EditMacros,
   ItemList,
   DetailsScreen,
@@ -125,7 +122,7 @@ function App() {
 
       <Stack.Screen
         name="Home"
-        component={HomeScreen}
+        component={WorkoutHome}
         options={{
           headerTitle: () => <Header name="Home " />,
           headerStyle: styles.headerStyle,
@@ -133,36 +130,7 @@ function App() {
           headerTintColor: colours.black,
         }}
       />
-      <Stack.Screen
-        name="WorkoutScreen"
-        component={WorkoutScreen}
-        options={{
-          headerTitle: () => <Header name={<StopWatch />} />,
-          headerStyle: styles.headerStyle,
-          headerBackTitleVisible: false,
-          headerTintColor: colours.black,
-        }}
-      />
-      <Stack.Screen
-        name="Timer"
-        component={TimerScreen}
-        options={{
-          headerTitle: () => <Header name="Rest " />,
-          headerStyle: styles.headerStyle,
-          headerBackTitleVisible: false,
-          headerTintColor: colours.black,
-        }}
-      />
-      <Stack.Screen
-        name="StopWatch"
-        component={StopWatch}
-        options={{
-          headerTitle: () => <Header name="Timer " />,
-          headerStyle: styles.headerStyle,
-          headerBackTitleVisible: false,
-          headerTintColor: colours.black,
-        }}
-      />
+
       <Stack.Screen
         name="CreateTemplate"
         component={CreateTemplateScreen}
