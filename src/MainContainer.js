@@ -132,7 +132,7 @@ function App() {
         name="CreateTemplate"
         component={CreateTemplateScreen}
         options={{
-          headerTitle: () => <Header name="Create Template " />,
+          headerTitle: () => <Header name="Create Workout " />,
           headerStyle: styles.headerStyle,
           headerBackTitleVisible: false,
           headerTintColor: colours.black,

@@ -14,7 +14,7 @@ export default function EndFormButtons({ handleSubmit, setWorkoutsNum }) {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.button} onPress={addField}>
-        <Text style={styles.buttonText}>Add</Text>
+        <Text style={styles.buttonText}>Add Exercise</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button} onPress={handleSubmit}>
         <Text style={styles.buttonText}>Submit</Text>

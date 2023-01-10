@@ -1,7 +1,7 @@
 import { TextInput, View, StyleSheet, Text } from "react-native";
 import { useState } from "react";
 import SetsAddSection from "./SetsAddSection";
-import colours from "../../config/colours";
+import colours from "../config/colours";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 const Workout = ({
@@ -59,7 +59,7 @@ const Workout = ({
             });
           }}
         >
-          <Text style={styles.buttonText}>Add Set</Text>
+          <Text>Add Set</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -81,7 +81,6 @@ const styles = StyleSheet.create({
     padding: 3,
     width: 80,
     marginBottom: 16,
-
     textAlign: "center",
   },
   set: {
@@ -109,19 +108,21 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
   },
-  button: {
-    alignItems: "center",
-    justifyContent: "center",
-    paddingVertical: 16,
-  },
-  buttonText: {
-    fontWeight: "500",
-    fontSize: 17,
-    color: "rgb(0, 122,225)",
-  },
+
   setWeightReps: {
     flex: 1,
     textAlign: "center",
+  },
+  button: {
+    marginTop: 30,
+    height: 70,
+    width: 140,
+    backgroundColor: colours.lightBlue,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 50,
+    justifyContent: "center",
+    // paddingVertical: 16,
   },
 });
 export default Workout;

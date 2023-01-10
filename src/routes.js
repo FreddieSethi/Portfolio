@@ -41,9 +41,9 @@ import WorkoutHome from "./screens/workoutContainer/WorkoutHome";
 import EditMacros from "./screens/EditMacros";
 import ItemList from "./components/ItemList";
 import DetailsScreen from "./components/DetailsScreen";
-import WorkoutProgram from "./components/home/WorkoutProgram";
+import WorkoutProgram from "./components/WorkoutProgram";
 import { getFormData } from "./data/firestopreRealTime";
-import WorkoutTabs from "./components/home/WorkoutTabs";
+import WorkoutTabs from "./components/WorkoutTabs";
 
 export {
   View,

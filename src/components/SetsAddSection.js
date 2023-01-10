@@ -51,7 +51,6 @@ export default function SetsAddSection({
           }}
           wrapperHeight={91}
           wrapperWidth={10}
-          wrapperColor="#FFFFFF"
           highlightColor="#d8d8d8"
           highlightBorderWidth={2}
         />
