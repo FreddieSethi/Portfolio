@@ -35,13 +35,12 @@ import MealPlanner from "./screens/moreContainer/MealPlanner";
 import Newsfeed from "./screens/moreContainer/Newsfeed";
 import DarkMode from "./screens/moreContainer/DarkMode";
 import Authentication from "./screens/moreContainer/Authentication";
-import CreateTemplateScreen from "./screens/workoutContainer/CreateTemplateScreen";
+import CreateWorkout from "./screens/workoutContainer/CreateWorkout";
 import Calendar from "./screens/workoutContainer/Calendar";
 import WorkoutHome from "./screens/workoutContainer/WorkoutHome";
 import EditMacros from "./screens/EditMacros";
 import ItemList from "./components/ItemList";
 import DetailsScreen from "./components/DetailsScreen";
-import WorkoutProgram from "./components/WorkoutProgram";
 import { getFormData } from "./data/firestopreRealTime";
 import WorkoutTabs from "./components/WorkoutTabs";
 
@@ -53,7 +52,6 @@ export {
   useNavigation,
   useEffect,
   useState,
-  WorkoutProgram,
   getFormData,
   WorkoutTabs,
   StyleSheet,
@@ -73,7 +71,7 @@ export {
   Newsfeed,
   DarkMode,
   Authentication,
-  CreateTemplateScreen,
+  CreateWorkout,
   Calendar,
   WorkoutHome,
   EditMacros,

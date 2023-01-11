@@ -1,12 +1,5 @@
 import { useState } from "react";
-import {
-  TextInput,
-  View,
-  StyleSheet,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-} from "react-native";
+import { TextInput, View, StyleSheet, ScrollView } from "react-native";
 import { Formik } from "formik";
 import Workout from "../../components/Workout";
 import EndFormButtons from "../../components/EndFormButtons";
@@ -15,21 +8,14 @@ import { formatFormForFirebaseUpload } from "./formFormatter";
 import { useNavigation } from "@react-navigation/native";
 import { setDataFromDB } from "./WorkoutHome";
 import colours from "../../config/colours";
-import { WorkoutProgram } from "../../routes";
 
 const submitForm = (values, navigation, setWorkouts) => {
   const form = formatFormForFirebaseUpload(values);
   writeFormData(form);
-
-  /*
-   * Updating values in home screen so they
-   * so it re-renders and shows the new objects
-   */
   setDataFromDB(setWorkouts);
-
   navigation.navigate("Home");
 };
-const CreateTemplateScreen = ({ route }) => {
+const CreateWorkout = ({ route }) => {
   const { setWorkouts } = route.params;
   const navigation = useNavigation();
   const [workoutsNum, setWorkoutsNum] = useState(Array(1).fill(0));
@@ -85,7 +71,7 @@ const CreateTemplateScreen = ({ route }) => {
 
 const styles = StyleSheet.create({
   textInput: {
-    backgroundColor: "rgba(158, 150, 150, .2)",
+    backgroundColor: colours.white,
     borderRadius: 8,
     padding: 5,
     fontSize: 25,
@@ -109,4 +95,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CreateTemplateScreen;
+export default CreateWorkout;

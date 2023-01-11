@@ -29,7 +29,7 @@ import {
   Newsfeed,
   DarkMode,
   Authentication,
-  CreateTemplateScreen,
+  CreateWorkout,
   Calendar,
   WorkoutHome,
   EditMacros,
@@ -130,7 +130,7 @@ function App() {
       />
       <Stack.Screen
         name="CreateTemplate"
-        component={CreateTemplateScreen}
+        component={CreateWorkout}
         options={{
           headerTitle: () => <Header name="Create Workout " />,
           headerStyle: styles.headerStyle,

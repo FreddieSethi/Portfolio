@@ -12,7 +12,6 @@ import {
   WorkoutTabs,
   StyleSheet,
   colours,
-  WorkoutProgram,
 } from "../../routes";
 
 const WorkoutHome = () => {

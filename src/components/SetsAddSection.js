@@ -1,5 +1,6 @@
 import { TextInput, View, StyleSheet, Text } from "react-native";
 import ScrollPicker from "react-native-wheel-scrollview-picker";
+import { colours } from "../routes";
 
 export default function SetsAddSection({
   workoutIndex,
@@ -61,7 +62,7 @@ export default function SetsAddSection({
 
 const styles = StyleSheet.create({
   textInputSmall: {
-    backgroundColor: "rgba(150, 150, 150, .1)",
+    backgroundColor: colours.white,
     borderRadius: 4,
     padding: 3,
     width: 80,

@@ -3,7 +3,6 @@ import themeContext from "../Theme/themeContext";
 import theme from "../Theme/theme";
 import { StyleSheet } from "react-native";
 import colours from "../config/colours";
-//theme colours, size, faded
 
 export default function TextInputComponent(props) {
   const { style, placeholderTextColor = "#FFCCCB", keyboardType } = props;
