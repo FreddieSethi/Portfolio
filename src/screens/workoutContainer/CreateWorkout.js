@@ -2,7 +2,7 @@ import { useState } from "react";
 import { TextInput, View, StyleSheet, ScrollView } from "react-native";
 import { Formik } from "formik";
 import Workout from "../../components/Workout";
-import EndFormButtons from "../../components/EndFormButtons";
+import WorkoutFormButtons from "../../components/WorkoutFormButtons";
 import { writeFormData } from "../../data/firestopreRealTime";
 import { formatFormForFirebaseUpload } from "./formFormatter";
 import { useNavigation } from "@react-navigation/native";
@@ -56,7 +56,7 @@ const CreateWorkout = ({ route }) => {
               );
             })}
 
-            <EndFormButtons
+            <WorkoutFormButtons
               style={styles.button}
               handleSubmit={handleSubmit}
               workoutsNum={workoutsNum}

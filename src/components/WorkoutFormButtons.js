@@ -3,7 +3,7 @@ import React from "react";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { colours } from "../routes";
 
-export default function EndFormButtons({ handleSubmit, setWorkoutsNum }) {
+export default function WorkoutFormButtons({ handleSubmit, setWorkoutsNum }) {
   const addField = () => {
     setWorkoutsNum((workoutsNum) => {
       let newWorkouts = workoutsNum.slice();
