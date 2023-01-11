@@ -1,6 +1,7 @@
 import { StyleSheet, View, Text } from "react-native";
 import React from "react";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { colours } from "../routes";
 
 export default function EndFormButtons({ handleSubmit, setWorkoutsNum }) {
   const addField = () => {
@@ -24,16 +25,22 @@ export default function EndFormButtons({ handleSubmit, setWorkoutsNum }) {
 }
 
 const styles = StyleSheet.create({
-  button: {
-    alignItems: "center",
-    justifyContent: "center",
-    marginVertical: 16,
-  },
-  buttonText: {
-    fontSize: 17,
-    color: "rgb(0, 122,225)",
-  },
   container: {
     marginBottom: 16,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  button: {
+    marginVertical: 16,
+    height: 70,
+    width: 140,
+    backgroundColor: colours.lightBlue,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 50,
+  },
+  buttonText: {
+    fontSize: 18,
+    color: colours.black,
   },
 });

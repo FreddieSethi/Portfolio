@@ -13,7 +13,6 @@ import {
 } from "../../routes";
 
 const WorkoutHome = () => {
-  const [name] = useState("");
   const [workouts, setWorkouts] = useState([]);
   const [itemChange, SetItemChange] = useState(false);
   const [, setLoadedData] = useState(false);
@@ -26,10 +25,6 @@ const WorkoutHome = () => {
   return (
     <View style={styles.home}>
       <ScrollView>
-        <Text style={styles.text}>
-          What are we hitting today {name.firstName}?
-        </Text>
-
         <WorkoutTabs setWorkouts={setWorkouts} />
 
         {workouts.map((workout) => {

@@ -102,32 +102,33 @@ const Workout = ({
           );
         })}
 
-        <View>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => {
-              setSets((sets) => {
-                let newSets = sets.slice();
-                newSets.push(1);
-                return newSets;
-              });
-            }}
-          >
-            <Text>Add Set</Text>
-          </TouchableOpacity>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <View style={{ flexDirection: "row" }}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => {
+                setSets((sets) => {
+                  let newSets = sets.slice();
+                  newSets.push(1);
+                  return newSets;
+                });
+              }}
+            >
+              <Text>Add Set</Text>
+            </TouchableOpacity>
+          </View>
 
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => {
-              setSets((sets) => {
-                let newSets = sets.slice();
-                newSets.push(1);
-                return newSets;
-              });
-            }}
-          >
-            <Text>Add Set</Text>
-          </TouchableOpacity>
+          <View style={{ flexDirection: "row" }}>
+            <TouchableOpacity style={styles.button}>
+              <Text>Delete Set</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     </View>
