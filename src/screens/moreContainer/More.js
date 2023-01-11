@@ -145,7 +145,7 @@ const Dashboard = () => {
             >
               <Icon name="finger-print-outline" size={60} color={theme.color} />
               <Text style={[styles.calcButtons, { color: theme.color }]}>
-                Authentication
+                Biometrics
               </Text>
             </TouchableOpacity>
           </View>
@@ -163,7 +163,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 50,
   },
-
   button: {
     marginTop: 50,
     height: 70,

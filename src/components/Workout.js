@@ -101,18 +101,34 @@ const Workout = ({
             </TouchableOpacity>
           );
         })}
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => {
-            setSets((sets) => {
-              let newSets = sets.slice();
-              newSets.push(1);
-              return newSets;
-            });
-          }}
-        >
-          <Text>Add Set</Text>
-        </TouchableOpacity>
+
+        <View>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => {
+              setSets((sets) => {
+                let newSets = sets.slice();
+                newSets.push(1);
+                return newSets;
+              });
+            }}
+          >
+            <Text>Add Set</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => {
+              setSets((sets) => {
+                let newSets = sets.slice();
+                newSets.push(1);
+                return newSets;
+              });
+            }}
+          >
+            <Text>Add Set</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );

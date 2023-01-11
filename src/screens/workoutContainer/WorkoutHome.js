@@ -1,11 +1,9 @@
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { firebase } from "../../config/firebase";
 
 import {
   View,
   Text,
   ScrollView,
-  ActivityIndicator,
   useEffect,
   useState,
   getFormData,
@@ -15,62 +13,39 @@ import {
 } from "../../routes";
 
 const WorkoutHome = () => {
-  const [name, setName] = useState("");
+  const [name] = useState("");
   const [workouts, setWorkouts] = useState([]);
   const [itemChange, SetItemChange] = useState(false);
-  const [loadedData, setLoadedData] = useState(false);
+  const [, setLoadedData] = useState(false);
 
   useEffect(() => {
     setDataFromDB(setWorkouts);
     setLoadedData(true);
   }, [itemChange]);
 
-  useEffect(() => {
-    firebase
-      .firestore()
-      .collection("users")
-      .doc(firebase.auth().currentUser.uid)
-      .get()
-      .then((snapshot) => {
-        if (snapshot.exists) {
-          setName({ firstName: snapshot.data().firstName });
-        } else {
-          console.log("User does not exist");
-        }
-      });
-  }, []);
+  return (
+    <View style={styles.home}>
+      <ScrollView>
+        <Text style={styles.text}>
+          What are we hitting today {name.firstName}?
+        </Text>
 
-  if (loadedData) {
-    return (
-      <View style={styles.home}>
-        <ScrollView>
-          <Text style={styles.subText}>
-            What are we hitting today {name.firstName}?
-          </Text>
+        <WorkoutTabs setWorkouts={setWorkouts} />
 
-          <WorkoutTabs setWorkouts={setWorkouts} />
-
-          {workouts.map((workout) => {
-            return (
-              <TouchableOpacity
-                key={workout.key}
-                workout={workout}
-                SetItemChange={SetItemChange}
-              >
-                <Text>Workout submitted should be here</Text>
-              </TouchableOpacity>
-            );
-          })}
-        </ScrollView>
-      </View>
-    );
-  } else {
-    return (
-      <View style={{ flex: 1, justifyContent: "center" }}>
-        <ActivityIndicator size="large" />
-      </View>
-    );
-  }
+        {workouts.map((workout) => {
+          return (
+            <TouchableOpacity
+              key={workout.key}
+              workout={workout}
+              SetItemChange={SetItemChange}
+            >
+              <Text>Workout submitted should be here</Text>
+            </TouchableOpacity>
+          );
+        })}
+      </ScrollView>
+    </View>
+  );
 };
 const styles = StyleSheet.create({
   home: {
@@ -78,18 +53,12 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   text: {
-    fontSize: 30,
-    marginLeft: 24,
-    marginTop: 32,
-    marginBottom: 16,
-    color: colours.black,
-  },
-  subText: {
-    fontSize: 16,
+    fontSize: 24,
     color: colours.black,
     marginLeft: 24,
     marginBottom: 16,
     marginTop: 30,
+    fontWeight: "bold",
   },
 });
 
