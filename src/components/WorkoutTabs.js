@@ -21,7 +21,7 @@ export default function Boxes({ setWorkouts }) {
       </TouchableOpacity>
       <TouchableOpacity
         style={{ alignItems: "center" }}
-        onPress={() => navigation.navigate("HistoryScreen")}
+        onPress={() => navigation.navigate("Calendar")}
       >
         <View style={styles.heroBox}>
           <Icon name="hourglass-outline" size={100} color={theme.color} />

@@ -1,11 +1,5 @@
 import React, { useMemo, useState, useCallback, useEffect } from "react";
-import {
-  StyleSheet,
-  View,
-  Switch,
-  Text,
-  ActivityIndicator,
-} from "react-native";
+import { StyleSheet, View, Switch, Text } from "react-native";
 import { NewCalendarList } from "react-native-calendars";
 import { getWorkoutDays } from "../../data/firestopreRealTime";
 
@@ -13,18 +7,17 @@ const initialDate = getTodaysDate();
 
 const NewCalendarScreen = () => {
   const [selected, setSelected] = useState(initialDate);
-  const [isHorizontal, setIsHorizontal] = useState(false);
+  const [horizontal, setHorizontal] = useState(false);
   const [markedDates, setMarkedDates] = useState({});
-  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    getWorkoutDaysFormatted(setMarkedDates, setLoaded);
+    getWorkoutDaysFormatted(setMarkedDates);
   }, []);
   const onValueChange = useCallback(
     (value) => {
-      setIsHorizontal(value);
+      setHorizontal(value);
     },
-    [isHorizontal]
+    [horizontal]
   );
 
   const onDayPress = useCallback(
@@ -42,22 +35,15 @@ const NewCalendarScreen = () => {
     };
   }, [selected, markedDates, onDayPress]);
 
-  if (!loaded) {
-    return (
-      <View style={{ flex: 1, justifyContent: "center" }}>
-        <ActivityIndicator size="large" />
-      </View>
-    );
-  }
   return (
     <View style={styles.container}>
       <View style={styles.switchView}>
         <Text style={styles.switchText}>Horizontal</Text>
-        <Switch value={isHorizontal} onValueChange={onValueChange} />
+        <Switch value={horizontal} onValueChange={onValueChange} />
       </View>
       <NewCalendarList
-        key={Number(isHorizontal)}
-        horizontal={isHorizontal}
+        key={Number(horizontal)}
+        horizontal={horizontal}
         staticHeader
         calendarProps={calendarProps}
       />
@@ -67,7 +53,7 @@ const NewCalendarScreen = () => {
 
 export default NewCalendarScreen;
 
-function getWorkoutDaysFormatted(setMarkedDates, setLoaded) {
+function getWorkoutDaysFormatted(setMarkedDates) {
   const workoutDays = getWorkoutDays();
   let formattedData = {};
   setTimeout(function () {
@@ -78,7 +64,7 @@ function getWorkoutDaysFormatted(setMarkedDates, setLoaded) {
       };
     });
     setMarkedDates(formattedData);
-    setLoaded(true);
+
     return formattedData;
   }, 1000);
 }

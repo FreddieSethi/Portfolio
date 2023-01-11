@@ -1,3 +1,4 @@
+import { TouchableOpacity } from "react-native-gesture-handler";
 import { firebase } from "../../config/firebase";
 
 import {
@@ -52,11 +53,13 @@ const WorkoutHome = () => {
 
           {workouts.map((workout) => {
             return (
-              <WorkoutProgram
+              <TouchableOpacity
                 key={workout.key}
                 workout={workout}
                 SetItemChange={SetItemChange}
-              />
+              >
+                <Text>Workout submitted should be here</Text>
+              </TouchableOpacity>
             );
           })}
         </ScrollView>

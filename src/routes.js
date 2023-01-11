@@ -36,7 +36,7 @@ import Newsfeed from "./screens/moreContainer/Newsfeed";
 import DarkMode from "./screens/moreContainer/DarkMode";
 import Authentication from "./screens/moreContainer/Authentication";
 import CreateTemplateScreen from "./screens/workoutContainer/CreateTemplateScreen";
-import HistoryScreen from "./screens/workoutContainer/HistoryScreen";
+import Calendar from "./screens/workoutContainer/Calendar";
 import WorkoutHome from "./screens/workoutContainer/WorkoutHome";
 import EditMacros from "./screens/EditMacros";
 import ItemList from "./components/ItemList";
@@ -74,7 +74,7 @@ export {
   DarkMode,
   Authentication,
   CreateTemplateScreen,
-  HistoryScreen,
+  Calendar,
   WorkoutHome,
   EditMacros,
   ItemList,

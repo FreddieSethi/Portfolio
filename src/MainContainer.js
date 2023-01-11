@@ -30,7 +30,7 @@ import {
   DarkMode,
   Authentication,
   CreateTemplateScreen,
-  HistoryScreen,
+  Calendar,
   WorkoutHome,
   EditMacros,
   ItemList,
@@ -139,8 +139,8 @@ function App() {
         }}
       />
       <Stack.Screen
-        name="HistoryScreen"
-        component={HistoryScreen}
+        name="Calendar"
+        component={Calendar}
         options={{
           headerTitle: () => <Header name="History" />,
           headerStyle: styles.headerStyle,

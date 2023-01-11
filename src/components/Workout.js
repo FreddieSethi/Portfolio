@@ -31,8 +31,6 @@ const Workout = ({
             marginBottom: 8,
           }}
         >
-          {/* Margins are to align headers with content better */}
-          {/* Should find a better way of doing so */}
           <Text style={styles.setWeightReps}>Set</Text>
           <Text style={styles.setWeightReps}>Weight</Text>
           <Text style={styles.setWeightReps}>Reps</Text>
