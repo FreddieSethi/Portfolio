@@ -1,8 +1,8 @@
 import { TextInput, View, StyleSheet, Text } from "react-native";
 import { useState } from "react";
-import SetsAddSection from "./SetsAddSection";
 import colours from "../config/colours";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import ScrollPicker from "react-native-wheel-scrollview-picker";
 
 const Workout = ({
   index: workoutIndex,
@@ -37,14 +37,68 @@ const Workout = ({
         </View>
         {sets.map((set, setIndex) => {
           return (
-            <SetsAddSection
+            <TouchableOpacity
               key={setIndex}
               workoutIndex={workoutIndex}
               setIndex={setIndex}
               handleBlur={handleBlur}
               setFieldValue={setFieldValue}
               handleChange={handleChange}
-            />
+            >
+              <View
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  marginTop: 8,
+                }}
+              >
+                <Text
+                  style={{
+                    flex: 1,
+                    textAlign: "center",
+                  }}
+                >
+                  {setIndex + 1}
+                </Text>
+                <View
+                  style={{
+                    flex: 1,
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <TextInput
+                    keyboardType="numeric"
+                    style={styles.textInputSmall}
+                    placeholder="Weight"
+                    onChangeText={handleChange(
+                      `weight Workout: ${workoutIndex}, S: ${setIndex}`
+                    )}
+                    onBlur={handleBlur(
+                      `weight Workout: ${workoutIndex} S: ${setIndex}`
+                    )}
+                  />
+                </View>
+
+                <View style={styles.scrollPickerContainer}>
+                  <ScrollPicker
+                    dataSource={Array.from({ length: 101 }, (_, i) => i)}
+                    selectedIndex={0}
+                    renderItem={(data, index) => {
+                      return <Text>{data}</Text>;
+                    }}
+                    onValueChange={(data, selectedIndex) => {
+                      setFieldValue(
+                        `reps Workout: ${workoutIndex}, S: ${setIndex}`,
+                        data
+                      );
+                    }}
+                    wrapperHeight={90}
+                    highlightBorderWidth={1}
+                  />
+                </View>
+              </View>
+            </TouchableOpacity>
           );
         })}
         <TouchableOpacity
@@ -122,5 +176,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     // paddingVertical: 16,
   },
+  textInputSmall: {
+    backgroundColor: colours.white,
+    borderRadius: 4,
+    padding: 2,
+    width: 70,
+    marginBottom: 6,
+    textAlign: "center",
+  },
+  scrollPickerContainer: { width: 60, margin: 5, flex: 1 },
 });
 export default Workout;
